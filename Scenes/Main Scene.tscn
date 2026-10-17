@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="6_156p1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
-size = Vector2(32, 32)
+size = Vector2(31, 31)
 
 [node name="Root" type="Node2D" unique_id=38066090]
 script = ExtResource("1_ke1vn")
