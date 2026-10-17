@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbfr7v2vgu0ef"
-path="res://.godot/imported/knight fight stance.png-8546d5f4ffd40d31c0afd14e7dc59232.ctex"
+uid="uid://bke1rl0k220nn"
+path="res://.godot/imported/wall-tile.png-0fdec35de8c6552f92c591303752046b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/knight fight stance.png"
-dest_files=["res://.godot/imported/knight fight stance.png-8546d5f4ffd40d31c0afd14e7dc59232.ctex"]
+source_file="res://Sprites/wall-tile.png"
+dest_files=["res://.godot/imported/wall-tile.png-0fdec35de8c6552f92c591303752046b.ctex"]
 
 [params]
 
