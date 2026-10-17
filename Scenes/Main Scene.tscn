@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="6_156p1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
-size = Vector2(31, 31)
+size = Vector2(22, 29)
 
 [node name="Root" type="Node2D" unique_id=38066090]
 script = ExtResource("1_ke1vn")
@@ -16,11 +16,10 @@ script = ExtResource("1_ke1vn")
 [node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=366292080 groups=["player"]]
-position = Vector2(317, 106)
+position = Vector2(322, 105)
 script = ExtResource("1_tn1qc")
 
 [node name="Vacuum" type="Node2D" parent="Player" unique_id=923890470]
-position = Vector2(0, 1)
 script = ExtResource("3_v87v2")
 
 [node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum" unique_id=1462794502]
@@ -30,11 +29,10 @@ texture = ExtResource("4_pilj3")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=41409101]
-position = Vector2(0, 1)
 texture = ExtResource("3_ke1vn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
-position = Vector2(0, 1)
+position = Vector2(4, 0.5)
 shape = SubResource("RectangleShape2D_ysm7c")
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("6_156p1")]

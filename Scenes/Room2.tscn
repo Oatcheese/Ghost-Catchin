@@ -38,13 +38,16 @@ sources/1 = SubResource("TileSetAtlasSource_we5c8")
 size = Vector2(576, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6g2q"]
-size = Vector2(32, 124)
+size = Vector2(32, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv0tw"]
+size = Vector2(32, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5puh"]
 size = Vector2(32, 288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a35do"]
-size = Vector2(32, 44)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm0l6"]
 size = Vector2(192, 32)
@@ -81,12 +84,12 @@ position = Vector2(320, 16.3125)
 shape = SubResource("RectangleShape2D_vgdee")
 
 [node name="LeftWall1" type="CollisionShape2D" parent="Walls" unique_id=2127648985]
-position = Vector2(16, 94)
+position = Vector2(16, 96)
 shape = SubResource("RectangleShape2D_u6g2q")
 
 [node name="LeftWall2" type="CollisionShape2D" parent="Walls" unique_id=1655127308]
-position = Vector2(16, 260)
-shape = SubResource("RectangleShape2D_u6g2q")
+position = Vector2(16, 256)
+shape = SubResource("RectangleShape2D_gv0tw")
 
 [node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=650898734]
 position = Vector2(624, 176)
@@ -98,7 +101,7 @@ script = ExtResource("3_erksf")
 next_room_path = "res://Scenes/StartRoom.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=402300083]
-position = Vector2(95, 65)
+position = Vector2(95, 63)
 shape = SubResource("RectangleShape2D_a35do")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1143308278]
