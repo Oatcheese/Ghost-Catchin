@@ -1,27 +1,14 @@
 [gd_scene format=3 uid="uid://suypckjkth6f"]
 
 [ext_resource type="Texture2D" uid="uid://bbfr7v2vgu0ef" path="res://Sprites/knight fight stance.png" id="1_atbvb"]
+[ext_resource type="Script" uid="uid://40k05c17mcel" path="res://Scripts/RoomManager.gd" id="1_ke1vn"]
 [ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="1_tn1qc"]
 
-[sub_resource type="GDScript" id="GDScript_tn1qc"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgdee"]
-size = Vector2(20, 648)
+size = Vector2(20, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6g2q"]
-size = Vector2(1152, 20)
+size = Vector2(320, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yvq54"]
 
@@ -29,32 +16,33 @@ size = Vector2(1152, 20)
 size = Vector2(83, 76)
 
 [node name="Node2D" type="Node2D" unique_id=38066090]
-script = SubResource("GDScript_tn1qc")
+script = ExtResource("1_ke1vn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=348545843]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=348545843]
 
-[node name="RightWallCollider" type="CollisionShape2D" parent="StaticBody2D" unique_id=92201066]
-position = Vector2(1162, 324)
+[node name="RightWallCollider" type="CollisionShape2D" parent="Walls" unique_id=92201066]
+position = Vector2(330, 88)
 shape = SubResource("RectangleShape2D_vgdee")
 
-[node name="LeftWallCollider" type="CollisionShape2D" parent="StaticBody2D" unique_id=1976329510]
-position = Vector2(-10, 324)
+[node name="LeftWallCollider" type="CollisionShape2D" parent="Walls" unique_id=1976329510]
+position = Vector2(-10, 88)
 shape = SubResource("RectangleShape2D_vgdee")
 
-[node name="TopWallCollider" type="CollisionShape2D" parent="StaticBody2D" unique_id=916034142]
-position = Vector2(576, -10)
+[node name="TopWallCollider" type="CollisionShape2D" parent="Walls" unique_id=916034142]
+position = Vector2(160, -10)
 shape = SubResource("RectangleShape2D_u6g2q")
 
-[node name="BottomWallCollider" type="CollisionShape2D" parent="StaticBody2D" unique_id=1666285319]
-position = Vector2(576, 658)
+[node name="BottomWallCollider" type="CollisionShape2D" parent="Walls" unique_id=1666285319]
+position = Vector2(160, 186)
 shape = SubResource("RectangleShape2D_u6g2q")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=366292080 groups=["player"]]
-position = Vector2(571, 319)
+position = Vector2(141, 85)
 script = ExtResource("1_tn1qc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=41409101]
-position = Vector2(0.37468374, 0.749997)
+top_level = true
+position = Vector2(141, 84.99999)
 scale = Vector2(0.0965473, 0.096547306)
 texture = ExtResource("1_atbvb")
 
@@ -64,3 +52,5 @@ sprite_frames = SubResource("SpriteFrames_yvq54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
 shape = SubResource("RectangleShape2D_ysm7c")
+
+[node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
