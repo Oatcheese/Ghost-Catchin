@@ -42,6 +42,16 @@ shape = SubResource("RectangleShape2D_u6g2q")
 position = Vector2(317, 106)
 script = ExtResource("1_tn1qc")
 
+[node name="Vacuum" type="Node2D" parent="Player" unique_id=923890470]
+position = Vector2(-19, 64)
+script = ExtResource("3_v87v2")
+
+[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum" unique_id=1462794502]
+position = Vector2(0, 1)
+scale = Vector2(0.079500705, 0.10313376)
+texture = ExtResource("4_pilj3")
+centered = false
+
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=41409101]
 position = Vector2(-28, 51)
 texture = ExtResource("3_ke1vn")
@@ -49,11 +59,3 @@ texture = ExtResource("3_ke1vn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
 position = Vector2(-28, 51)
 shape = SubResource("RectangleShape2D_ysm7c")
-
-[node name="Vacuum" type="Node2D" parent="." unique_id=923890470]
-script = ExtResource("3_v87v2")
-
-[node name="VacuumSprite" type="Sprite2D" parent="Vacuum" unique_id=1462794502]
-scale = Vector2(0.079500705, 0.10313376)
-texture = ExtResource("4_pilj3")
-centered = false
