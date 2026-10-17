@@ -95,7 +95,7 @@ size = Vector2(64, 32)
 position = Vector2(0, 12)
 
 [node name="RightDoorMark" type="Marker2D" parent="." unique_id=1924532586]
-position = Vector2(624, 176)
+position = Vector2(620, 165)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=274395659]
 position = Vector2(304, 172)
