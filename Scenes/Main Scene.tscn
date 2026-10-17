@@ -7,35 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="4_pilj3"]
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="6_156p1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgdee"]
-size = Vector2(20, 352)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6g2q"]
-size = Vector2(640, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
-size = Vector2(32, 32)
+size = Vector2(31, 31)
 
 [node name="Root" type="Node2D" unique_id=38066090]
 script = ExtResource("1_ke1vn")
-
-[node name="Walls" type="StaticBody2D" parent="." unique_id=348545843]
-
-[node name="RightWallCollider" type="CollisionShape2D" parent="Walls" unique_id=92201066]
-position = Vector2(650, 176)
-shape = SubResource("RectangleShape2D_vgdee")
-
-[node name="LeftWallCollider" type="CollisionShape2D" parent="Walls" unique_id=1976329510]
-position = Vector2(-10, 176)
-shape = SubResource("RectangleShape2D_vgdee")
-
-[node name="TopWallCollider" type="CollisionShape2D" parent="Walls" unique_id=916034142]
-position = Vector2(320, -10)
-shape = SubResource("RectangleShape2D_u6g2q")
-
-[node name="BottomWallCollider" type="CollisionShape2D" parent="Walls" unique_id=1666285319]
-position = Vector2(320, 362)
-shape = SubResource("RectangleShape2D_u6g2q")
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
 
