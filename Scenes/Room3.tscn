@@ -1,0 +1,126 @@
+[gd_scene format=4 uid="uid://dcm28t3s82xlm"]
+
+[ext_resource type="Texture2D" uid="uid://c2rdp2f11y6nn" path="res://Sprites/roof-wall.png" id="1_tlfa6"]
+[ext_resource type="Texture2D" uid="uid://cvof7h028dbbf" path="res://Sprites/side-wall.png" id="2_pwwwv"]
+[ext_resource type="Texture2D" uid="uid://7xetxva3sf2t" path="res://Sprites/corner-wall.png" id="3_6ofnw"]
+[ext_resource type="Texture2D" uid="uid://dr08l7qbbr0bb" path="res://Sprites/top-door.png" id="4_retx1"]
+[ext_resource type="Texture2D" uid="uid://jcwl1m1xfakj" path="res://Sprites/roof-cornel-wall.png" id="5_bur1i"]
+[ext_resource type="Texture2D" uid="uid://cr26771hxute6" path="res://Sprites/floor-tile.png" id="6_qrwqm"]
+[ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/wall-tile.png" id="7_osw5t"]
+[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Door.gd" id="8_pwwwv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avl2w"]
+texture = ExtResource("1_tlfa6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1le2d"]
+texture = ExtResource("2_pwwwv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nuwdb"]
+texture = ExtResource("3_6ofnw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxvs6"]
+texture = ExtResource("4_retx1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sho25"]
+texture = ExtResource("5_bur1i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehr5s"]
+texture = ExtResource("6_qrwqm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nybtx"]
+texture = ExtResource("7_osw5t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8cp2n"]
+tile_size = Vector2i(32, 32)
+sources/6 = SubResource("TileSetAtlasSource_ehr5s")
+sources/7 = SubResource("TileSetAtlasSource_nybtx")
+sources/0 = SubResource("TileSetAtlasSource_avl2w")
+sources/1 = SubResource("TileSetAtlasSource_1le2d")
+sources/2 = SubResource("TileSetAtlasSource_nuwdb")
+sources/4 = SubResource("TileSetAtlasSource_jxvs6")
+sources/5 = SubResource("TileSetAtlasSource_sho25")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orjj1"]
+size = Vector2(288, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlfa6"]
+size = Vector2(256, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t073m"]
+size = Vector2(576, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvsx7"]
+size = Vector2(32, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqlqm"]
+size = Vector2(32, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ofnw"]
+size = Vector2(14, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_retx1"]
+size = Vector2(64, 32)
+
+[node name="Room3" type="Node2D" unique_id=1494111831]
+position = Vector2(0, 12)
+
+[node name="BottomDoorMark" type="Marker2D" parent="." unique_id=125068149]
+position = Vector2(336, 336)
+
+[node name="FloorTiles" type="TileMapLayer" parent="." unique_id=2047471912]
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAABAAAAIAAQAAAAAAABAAAAMAAQAAAAAAABAAAAQAAQAAAAAAABAAAAUAAQAAAAAAABAAAAYAAQAAAAAAABAAAAcAAQAAAAAAABAAAAgAAQAAAAAAABAAAAkAAQAAAAAAABABAAoAAQAAAAAAAFACAAoAAQAAAAAAAFADAAoAAQAAAAAAAFAEAAoAAQAAAAAAAFAFAAoAAQAAAAAAAFAGAAoAAQAAAAAAAFAHAAoAAQAAAAAAAFAIAAoAAQAAAAAAAFAJAAoAAQAAAAAAAFAKAAoABAAAAAAAAAALAAoAAQAAAAAAAFAMAAoAAQAAAAAAAFANAAoAAQAAAAAAAFAOAAoAAQAAAAAAAFAPAAoAAQAAAAAAAFAQAAoAAQAAAAAAAFARAAoAAQAAAAAAAFASAAoAAQAAAAAAAFATAAkAAQAAAAAAAAATAAgAAQAAAAAAAAATAAcAAQAAAAAAAAATAAYAAQAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAABAAkABgAAAAAAAAACAAkABgAAAAAAAAADAAkABgAAAAAAAAAEAAkABgAAAAAAAAAFAAkABgAAAAAAAAAGAAkABgAAAAAAAAAHAAkABgAAAAAAAAAIAAkABgAAAAAAAAAJAAkABgAAAAAAAAAKAAkABgAAAAAAAAALAAkABgAAAAAAAAAMAAkABgAAAAAAAAANAAkABgAAAAAAAAAOAAkABgAAAAAAAAAPAAkABgAAAAAAAAAQAAkABgAAAAAAAAARAAkABgAAAAAAAAASAAkABgAAAAAAAAASAAgABgAAAAAAAAARAAgABgAAAAAAAAAQAAgABgAAAAAAAAAPAAgABgAAAAAAAAAOAAgABgAAAAAAAAANAAgABgAAAAAAAAAMAAgABgAAAAAAAAALAAgABgAAAAAAAAAKAAgABwAAAAAAAAAJAAgABwAAAAAAAAAIAAgABwAAAAAAAAAHAAgABwAAAAAAAAAGAAgABwAAAAAAAAAFAAgABgAAAAAAAAAEAAgABgAAAAAAAAADAAgABgAAAAAAAAACAAgABgAAAAAAAAABAAgABgAAAAAAAAABAAcABgAAAAAAAAACAAcABgAAAAAAAAADAAcABgAAAAAAAAAEAAcABgAAAAAAAAAFAAcABgAAAAAAAAAGAAcABwAAAAAAAAAHAAcABgAAAAAAAAAIAAcABgAAAAAAAAAJAAcABgAAAAAAAAAKAAcABwAAAAAAAAALAAcABgAAAAAAAAAMAAcABgAAAAAAAAANAAcABgAAAAAAAAAOAAcABgAAAAAAAAAPAAcABgAAAAAAAAAQAAcABgAAAAAAAAARAAcABgAAAAAAAAASAAcABgAAAAAAAAASAAYABgAAAAAAAAASAAUABgAAAAAAAAASAAQABgAAAAAAAAASAAMABgAAAAAAAAASAAIABgAAAAAAAAASAAEABwAAAAAAAAARAAEABwAAAAAAAAAQAAEABwAAAAAAAAAPAAEABwAAAAAAAAAOAAEABwAAAAAAAAANAAEABwAAAAAAAAAMAAEABwAAAAAAAAALAAEABwAAAAAAAAAKAAEABwAAAAAAAAAJAAEABwAAAAAAAAAIAAEABwAAAAAAAAAHAAEABwAAAAAAAAAGAAEABwAAAAAAAAAFAAEABwAAAAAAAAAEAAEABwAAAAAAAAADAAEABwAAAAAAAAACAAEABwAAAAAAAAABAAEABwAAAAAAAAABAAIABgAAAAAAAAABAAMABgAAAAAAAAABAAQABgAAAAAAAAABAAUABgAAAAAAAAABAAYABgAAAAAAAAACAAYABgAAAAAAAAADAAYABgAAAAAAAAAEAAYABgAAAAAAAAAFAAYABgAAAAAAAAAGAAYABgAAAAAAAAAHAAYABgAAAAAAAAAIAAYABgAAAAAAAAAJAAYABgAAAAAAAAAKAAYABwAAAAAAAAALAAYABgAAAAAAAAAMAAYABgAAAAAAAAANAAYABgAAAAAAAAAOAAYABgAAAAAAAAAPAAYABgAAAAAAAAAQAAYABgAAAAAAAAAQAAUABgAAAAAAAAARAAUABgAAAAAAAAARAAQABgAAAAAAAAARAAMABgAAAAAAAAAQAAMABgAAAAAAAAAPAAMABgAAAAAAAAAOAAMABgAAAAAAAAANAAMABwAAAAAAAAAMAAMABwAAAAAAAAALAAMABwAAAAAAAAAFAAMABgAAAAAAAAAEAAMABgAAAAAAAAAEAAIABgAAAAAAAAADAAIABgAAAAAAAAACAAIABgAAAAAAAAACAAMABgAAAAAAAAADAAMABgAAAAAAAAAFAAQABgAAAAAAAAAEAAQABgAAAAAAAAADAAQABgAAAAAAAAACAAQABgAAAAAAAAACAAUABgAAAAAAAAADAAUABgAAAAAAAAAEAAUABgAAAAAAAAAFAAUABgAAAAAAAAAGAAUABgAAAAAAAAAHAAUABgAAAAAAAAAIAAUABgAAAAAAAAAJAAUABgAAAAAAAAAKAAUABwAAAAAAAAALAAUABgAAAAAAAAAMAAUABgAAAAAAAAANAAUABgAAAAAAAAAOAAUABgAAAAAAAAAPAAUABgAAAAAAAAARAAYABgAAAAAAAAARAAIABgAAAAAAAAAQAAIABgAAAAAAAAAPAAIABgAAAAAAAAAOAAQABgAAAAAAAAAPAAQABgAAAAAAAAAQAAQABgAAAAAAAAANAAQABgAAAAAAAAAMAAQABgAAAAAAAAALAAQABgAAAAAAAAAKAAQABwAAAAAAAAAJAAQABgAAAAAAAAAIAAQABgAAAAAAAAAHAAQABgAAAAAAAAAGAAQABgAAAAAAAAAFAAIABgAAAAAAAAAGAAIABgAAAAAAAAAHAAIABgAAAAAAAAAIAAIABgAAAAAAAAAJAAIABgAAAAAAAAAKAAIABgAAAAAAAAALAAIABgAAAAAAAAAMAAIABgAAAAAAAAANAAIABgAAAAAAAAAOAAIABgAAAAAAAAATAAUAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAABQAAAAAAABATAAAABQAAAAAAAAAAAAoAAgAAAAAAAGATAAoAAgAAAAAAADAGAAMABwAAAAAAAAAHAAMABwAAAAAAAAAIAAMABwAAAAAAAAAJAAMABwAAAAAAAAAKAAMABwAAAAAAAAA=")
+tile_set = SubResource("TileSet_8cp2n")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=904278609]
+
+[node name="FloorWall" type="CollisionShape2D" parent="Walls" unique_id=1114086468]
+position = Vector2(176, 336)
+shape = SubResource("RectangleShape2D_orjj1")
+
+[node name="FloorWall2" type="CollisionShape2D" parent="Walls" unique_id=210142570]
+position = Vector2(480, 336)
+shape = SubResource("RectangleShape2D_tlfa6")
+
+[node name="RoofWall" type="CollisionShape2D" parent="Walls" unique_id=444418914]
+position = Vector2(320, 32)
+shape = SubResource("RectangleShape2D_t073m")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=16060218]
+position = Vector2(16, 192)
+shape = SubResource("RectangleShape2D_hvsx7")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=1391451038]
+position = Vector2(624, 192)
+shape = SubResource("RectangleShape2D_jqlqm")
+
+[node name="BottomDoor" type="Area2D" parent="." unique_id=821215064]
+position = Vector2(-79, 113)
+script = ExtResource("8_pwwwv")
+next_room_path = "res://Scenes/Room2.tscn"
+spawn_marker_name = "TopDoorMark"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDoor" unique_id=387304433]
+position = Vector2(415, 246)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_6ofnw")
+
+[node name="InteractionArea" type="Area2D" parent="BottomDoor" unique_id=240425264]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDoor/InteractionArea" unique_id=993520706]
+position = Vector2(415, 207)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_retx1")
