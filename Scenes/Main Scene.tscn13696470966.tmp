@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://suypckjkth6f"]
+
+[ext_resource type="Texture2D" uid="uid://bbfr7v2vgu0ef" path="res://Sprites/knight fight stance.png" id="1_atbvb"]
+[ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="1_tn1qc"]
+[ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scenes/Vacuum.gd" id="3_v87v2"]
+[ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="4_pilj3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvq54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
+size = Vector2(83, 76)
+
+[node name="Player" type="Node2D" unique_id=38066090]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=366292080]
+script = ExtResource("1_tn1qc")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=41409101]
+position = Vector2(0.37468374, 0.749997)
+scale = Vector2(0.0965473, 0.096547306)
+texture = ExtResource("1_atbvb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1567004082]
+visible = false
+sprite_frames = SubResource("SpriteFrames_yvq54")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="Player" unique_id=774751776]
+shape = SubResource("RectangleShape2D_ysm7c")
+
+[node name="Vacuum" type="Node2D" parent="." unique_id=923890470]
+script = ExtResource("3_v87v2")
+
+[node name="VacuumSprite" type="Sprite2D" parent="Vacuum" unique_id=1462794502]
+scale = Vector2(0.079500705, 0.10313376)
+texture = ExtResource("4_pilj3")
+centered = false
