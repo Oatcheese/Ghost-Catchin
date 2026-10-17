@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://cobdtqtbi1mvr" path="res://Sprites/player.png" id="3_ke1vn"]
 [ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scenes/Vacuum.gd" id="3_v87v2"]
 [ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="4_pilj3"]
+[ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="6_156p1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
 size = Vector2(32, 32)
 
-[node name="Node2D" type="Node2D" unique_id=38066090]
+[node name="Root" type="Node2D" unique_id=38066090]
 script = ExtResource("1_ke1vn")
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
@@ -19,19 +20,22 @@ position = Vector2(317, 106)
 script = ExtResource("1_tn1qc")
 
 [node name="Vacuum" type="Node2D" parent="Player" unique_id=923890470]
-position = Vector2(-19, 64)
+position = Vector2(0, 1)
 script = ExtResource("3_v87v2")
 
 [node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum" unique_id=1462794502]
-position = Vector2(0, 1)
+position = Vector2(14, 14)
 scale = Vector2(0.079500705, 0.10313376)
 texture = ExtResource("4_pilj3")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=41409101]
-position = Vector2(-28, 51)
+position = Vector2(0, 1)
 texture = ExtResource("3_ke1vn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
-position = Vector2(-28, 51)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ysm7c")
+
+[node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("6_156p1")]
+position = Vector2(126, -58)
