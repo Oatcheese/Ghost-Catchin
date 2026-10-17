@@ -1,8 +1,8 @@
 extends Area2D
 
-@export var suck_power := 200.0
-@export var capture_time := 2.5
-@export var facing_threshold := 0.7  # dot product; ~45 degree cone
+@export var suck_power := 10
+@export var capture_time := 1.8
+@export var facing_threshold := 0.4  # dot product; wider cone to avoid losing grip
 
 var is_sucking := false
 var sucked_ghost: Node2D = null
@@ -27,6 +27,9 @@ func _ready() -> void:
 	var shape = RectangleShape2D.new()
 	shape.size = Vector2(60, 34)
 	$SuccCollider.shape = shape
+	if progress_bar != null:
+		progress_bar.max_value = capture_time
+		progress_bar.reset()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,16 +52,21 @@ func _process(delta: float) -> void:
 		var facing = FORWARD.rotated(rotation)
 		var to_ghost = (sucked_ghost.global_position - global_position).normalized()
 		if facing.dot(to_ghost) < facing_threshold:
-			release_ghost()
-			return
+			if sucked_ghost.global_position.distance_to(global_position) > 160:
+				release_ghost()
+				return
 
 		capture_timer += delta
+		if progress_bar != null:
+			progress_bar.target = capture_timer
 		control.visible = true
 		if capture_timer >= capture_time:
 			capture_ghost()
 			return
 	else:
 		capture_timer = 0.0
+		if progress_bar != null:
+			progress_bar.target = 0.0
 		control.visible = false
 
 	# Begin sucking a ghost that is already inside the nozzle (e.g. LMB held over it).
@@ -74,9 +82,18 @@ func _process(delta: float) -> void:
 func start_sucking(ghost: Node2D) -> void:
 	sucked_ghost = ghost
 	capture_timer = 0.0
-	progress_bar.reset()
+	if progress_bar != null:
+		progress_bar.reset()
+		progress_bar.max_value = capture_time
+		progress_bar.target = 0.0
 	control.visible = true
-	ghost.start_being_sucked()
+	if ghost.has_method("start_being_sucked"):
+		ghost.start_being_sucked()
+	if ghost.has_method("set_linear_velocity"):
+		ghost.linear_velocity = Vector2.ZERO
+	elif ghost is RigidBody2D:
+		ghost.linear_velocity = Vector2.ZERO
+		ghost.angular_velocity = 0.0
 
 func capture_ghost() -> void:
 	if sucked_ghost == null:
@@ -90,7 +107,9 @@ func release_ghost() -> void:
 		sucked_ghost.stop_being_sucked()
 	sucked_ghost = null
 	capture_timer = 0.0
-	progress_bar.reset()
+	if progress_bar != null:
+		progress_bar.reset()
+		progress_bar.target = 0.0
 	control.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
