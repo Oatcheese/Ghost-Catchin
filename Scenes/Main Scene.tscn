@@ -24,4 +24,3 @@ sprite_frames = SubResource("SpriteFrames_yvq54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
 shape = SubResource("RectangleShape2D_ysm7c")
-[node name="Node2D" type="Node2D" unique_id=38066090]
