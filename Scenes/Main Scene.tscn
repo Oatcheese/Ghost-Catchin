@@ -1,54 +1,12 @@
 [gd_scene format=3 uid="uid://suypckjkth6f"]
 
 [ext_resource type="Script" uid="uid://40k05c17mcel" path="res://Scripts/RoomManager.gd" id="1_ke1vn"]
-[ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="1_tn1qc"]
-[ext_resource type="Texture2D" uid="uid://dbd6pn17v85qs" path="res://Sprites/player/UntitledArtwork1 - 1.png" id="3_156p1"]
-[ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scenes/Vacuum.gd" id="3_v87v2"]
-[ext_resource type="Texture2D" uid="uid://0nyq58qn40om" path="res://Sprites/player/UntitledArtwork1 - 2.png" id="4_7enb7"]
-[ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="4_pilj3"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_156p1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7enb7")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_a35do"]
-radius = 5.330767
+[ext_resource type="PackedScene" uid="uid://jka2s6ly0sly" path="res://Scenes/Player.tscn" id="2_tn1qc"]
 
 [node name="Root" type="Node2D" unique_id=38066090]
 script = ExtResource("1_ke1vn")
 
 [node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=366292080 groups=["player"]]
-position = Vector2(322, 105)
-scale = Vector2(1.25, 1.25)
-script = ExtResource("1_tn1qc")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=366942439]
-sprite_frames = SubResource("SpriteFrames_a35do")
-frame_progress = 0.67260134
-
-[node name="Vacuum" type="Node2D" parent="Player" unique_id=923890470]
-script = ExtResource("3_v87v2")
-
-[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum" unique_id=1462794502]
-position = Vector2(14, 14)
-scale = Vector2(0.079500705, 0.10313376)
-texture = ExtResource("4_pilj3")
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
-position = Vector2(3.2, 8.8)
-rotation = 0.40840703
-skew = 0.34906584
-shape = SubResource("CircleShape2D_a35do")
+[node name="PlayerNode" parent="." unique_id=388349598 instance=ExtResource("2_tn1qc")]
+position = Vector2(163, 117)
