@@ -4,10 +4,11 @@ var enemySpeed = 5
 var playerPosition
 var tooClose
 var velocity
+var vacc
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	vacc = get_node("/root/Root/PlayerNode/Player/Vacuum2/Succ")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +21,11 @@ func _process(delta: float) -> void:
 	else:
 		enemyDirection = position.direction_to(playerPosition)
 	apply_impulse(enemyDirection, Vector2(0,0))
+	
+	#Determines if succ is happening and facing ghose
+	#If so, move ghost slowly towards player
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		pass
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var min = Vector2(-50, -50)
