@@ -5,7 +5,7 @@ extends Node2D
 var current_room: Node2D = null
 
 func _ready() -> void:
-	GameManager.room_change_requested.connect(_change_room)
+	GameManager.room_change_requested.connect(_change_room, CONNECT_DEFERRED)
 	
 	# Load the starting room
 	var start_room = load("res://Scenes/StartRoom.tscn")

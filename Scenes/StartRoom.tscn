@@ -3,15 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cr26771hxute6" path="res://Sprites/floor-tile.png" id="1_a4mgr"]
 [ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/wall-tile.png" id="2_d4b1u"]
 [ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Door.gd" id="3_d4b1u"]
-[ext_resource type="PackedScene" uid="uid://dpd6b4rc3pmy4" path="res://Scenes/Room2.tscn" id="4_18u5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18u5k"]
 texture = ExtResource("1_a4mgr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hr4lj"]
 texture = ExtResource("2_d4b1u")
@@ -38,7 +34,7 @@ tile_set = SubResource("TileSet_7bevr")
 [node name="Door" type="Area2D" parent="." unique_id=1758795203]
 position = Vector2(529, 112)
 script = ExtResource("3_d4b1u")
-next_room_scene = ExtResource("4_18u5k")
+next_room_path = "res://Scenes/Room2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=402300083]
 position = Vector2(95, 63)
@@ -47,5 +43,3 @@ shape = SubResource("RectangleShape2D_a35do")
 [node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1143308278]
 position = Vector2(95, 63)
 texture = ExtResource("1_a4mgr")
-
-[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
