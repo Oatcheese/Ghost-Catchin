@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cmjfrly4grsig"]
+
+[ext_resource type="Texture2D" uid="uid://dgbr0m0rx51dd" path="res://Sprites/sheld.jpg" id="1_hmvil"]
+[ext_resource type="Script" uid="uid://vh00pda4gbsm" path="res://Scripts/BasicGhost.gd" id="1_lbxpe"]
+[ext_resource type="Texture2D" uid="uid://fdj8leyfv1i7" path="res://icon.svg" id="3_hmvil"]
+[ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="3_mrk51"]
+[ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scenes/Vacuum.gd" id="4_lbxpe"]
+[ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="5_sjca6"]
+[ext_resource type="Texture2D" uid="uid://cobdtqtbi1mvr" path="res://Sprites/player.png" id="6_vdxke"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b44r2"]
+radius = 200.0
+height = 500.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
+size = Vector2(112, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b44r2"]
+size = Vector2(47, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p040"]
+size = Vector2(32, 32)
+
+[node name="Ghost" type="Node2D" unique_id=2131525068]
+
+[node name="Ghost" type="RigidBody2D" parent="." unique_id=1043465661]
+position = Vector2(384, 213)
+gravity_scale = 0.0
+script = ExtResource("1_lbxpe")
+
+[node name="Area2D" type="Area2D" parent="Ghost" unique_id=1746415917]
+position = Vector2(-2, 0)
+
+[node name="GhostNoZone" type="CollisionShape2D" parent="Ghost/Area2D" unique_id=789397389]
+position = Vector2(2, 4)
+shape = SubResource("CapsuleShape2D_b44r2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ghost" unique_id=1629164324]
+scale = Vector2(0.60928965, 0.6092896)
+texture = ExtResource("1_hmvil")
+
+[node name="GhostCollider" type="CollisionShape2D" parent="Ghost" unique_id=1645876694]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ysm7c")
+
+[node name="Item" type="RigidBody2D" parent="." unique_id=1287035267 groups=["Throwables"]]
+position = Vector2(560, 231)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item" unique_id=2023992902]
+shape = SubResource("RectangleShape2D_b44r2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item" unique_id=1292203292]
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_hmvil")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=341207772 groups=["player"]]
+position = Vector2(649, 151)
+script = ExtResource("3_mrk51")
+
+[node name="Vacuum" type="Node2D" parent="Player" unique_id=40639425]
+position = Vector2(7, 15)
+script = ExtResource("4_lbxpe")
+
+[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum" unique_id=857679822]
+position = Vector2(0, 1)
+scale = Vector2(0.079500705, 0.10313376)
+texture = ExtResource("5_sjca6")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1237848527]
+position = Vector2(-2, 2)
+texture = ExtResource("6_vdxke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=691455253]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_6p040")
+
+[connection signal="area_exited" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_body_exited"]
