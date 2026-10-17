@@ -36,6 +36,8 @@ shape = SubResource("RectangleShape2D_u6g2q")
 position = Vector2(160, 186)
 shape = SubResource("RectangleShape2D_u6g2q")
 
+[node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=366292080 groups=["player"]]
 position = Vector2(141, 85)
 script = ExtResource("1_tn1qc")
@@ -52,5 +54,3 @@ sprite_frames = SubResource("SpriteFrames_yvq54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
 shape = SubResource("RectangleShape2D_ysm7c")
-
-[node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
