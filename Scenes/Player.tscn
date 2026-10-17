@@ -3,9 +3,24 @@
 [ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="1_dewec"]
 [ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="3_nn08x"]
 [ext_resource type="Script" uid="uid://jmm6wh3x7hlm" path="res://Scripts/VacuumSkillCheckBar.gd" id="4_5ixxa"]
-[ext_resource type="Texture2D" uid="uid://cobdtqtbi1mvr" path="res://Sprites/player.png" id="4_52ee3"]
 [ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scripts/Vacuum.gd" id="4_nn08x"]
 [ext_resource type="Texture2D" uid="uid://cn4swb7ic4h3e" path="res://Sprites/tornadoi.png" id="5_nn08x"]
+[ext_resource type="Texture2D" uid="uid://dbd6pn17v85qs" path="res://Sprites/player/UntitledArtwork1 - 1.png" id="6_52ee3"]
+[ext_resource type="Texture2D" uid="uid://0nyq58qn40om" path="res://Sprites/player/UntitledArtwork1 - 2.png" id="7_bhhdu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_52ee3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bhhdu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ixxa"]
 bg_color = Color(0.28235295, 0.80784315, 0.47058824, 1)
@@ -17,7 +32,7 @@ border_blend = true
 bg_color = Color(0.48607922, 0.559899, 0.9783465, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhhdu"]
-size = Vector2(32, 32)
+size = Vector2(12.203125, 8.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
 
@@ -25,6 +40,9 @@ size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2058297414 groups=["player"]]
 script = ExtResource("1_dewec")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1889163727]
+sprite_frames = SubResource("SpriteFrames_a35do")
 
 [node name="Control" type="Control" parent="Player" unique_id=540934993]
 visible = false
@@ -47,12 +65,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_nn08x")
 show_percentage = false
 script = ExtResource("4_5ixxa")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1656385104]
-position = Vector2(0, 1)
-texture = ExtResource("4_52ee3")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=860557823]
-position = Vector2(0, 1)
+position = Vector2(1.8984375, 10)
 shape = SubResource("RectangleShape2D_bhhdu")
 
 [node name="Vacuum2" type="Area2D" parent="Player" unique_id=1206460143]
