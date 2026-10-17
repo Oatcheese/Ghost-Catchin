@@ -13,26 +13,26 @@ size = Vector2(112, 169)
 [node name="Ghost" type="Node2D" unique_id=2131525068]
 scale = Vector2(0.9653578, 0.9743837)
 
-[node name="Ghost" type="RigidBody2D" parent="." unique_id=1043465661]
+[node name="Ghost" type="RigidBody2D" parent="." unique_id=1043465661 groups=["Ghosts"]]
 position = Vector2(1.0358582, 2.0525665)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
 script = ExtResource("1_lbxpe")
 
-[node name="Area2D" type="Area2D" parent="Ghost" unique_id=1746415917]
+[node name="Area2D" type="Area2D" parent="Ghost" unique_id=1746415917 groups=["Ghosts"]]
 position = Vector2(-2, 0)
 
-[node name="GhostNoZone" type="CollisionShape2D" parent="Ghost/Area2D" unique_id=789397389]
+[node name="GhostNoZone" type="CollisionShape2D" parent="Ghost/Area2D" unique_id=789397389 groups=["Ghosts"]]
 position = Vector2(2, 4)
 scale = Vector2(0.3867308, 0.3867308)
 shape = SubResource("CapsuleShape2D_b44r2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ghost" unique_id=1629164324]
+[node name="Sprite2D" type="Sprite2D" parent="Ghost" unique_id=1629164324 groups=["Ghosts"]]
 scale = Vector2(0.23189655, 0.23189652)
 texture = ExtResource("1_hmvil")
 
-[node name="GhostCollider" type="CollisionShape2D" parent="Ghost" unique_id=1645876694]
+[node name="GhostCollider" type="CollisionShape2D" parent="Ghost" unique_id=1645876694 groups=["Ghosts"]]
 position = Vector2(0, -0.5)
 scale = Vector2(0.38060147, 0.38060147)
 shape = SubResource("RectangleShape2D_ysm7c")
