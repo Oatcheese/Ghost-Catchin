@@ -22,5 +22,5 @@ texture = ExtResource("1_atbvb")
 visible = false
 sprite_frames = SubResource("SpriteFrames_yvq54")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
+[node name="Player Collider" type="CollisionShape2D" parent="Player" unique_id=774751776]
 shape = SubResource("RectangleShape2D_ysm7c")
