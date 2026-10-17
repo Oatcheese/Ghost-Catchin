@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scenes/Vacuum.gd" id="3_v87v2"]
 [ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="4_pilj3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
-size = Vector2(22, 29)
+[sub_resource type="CircleShape2D" id="CircleShape2D_a35do"]
+radius = 7.2801113
 
 [node name="Root" type="Node2D" unique_id=38066090]
 script = ExtResource("1_ke1vn")
@@ -31,5 +31,7 @@ centered = false
 texture = ExtResource("3_ke1vn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=774751776]
-position = Vector2(4, 0.5)
-shape = SubResource("RectangleShape2D_ysm7c")
+position = Vector2(1, 9)
+rotation = 0.40840703
+skew = 0.34906584
+shape = SubResource("CircleShape2D_a35do")
