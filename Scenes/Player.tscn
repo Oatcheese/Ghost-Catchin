@@ -36,7 +36,7 @@ bg_color = Color(0.48607922, 0.559899, 0.9783465, 1)
 size = Vector2(12.203125, 8.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
-size = Vector2(25.399998, 26.000002)
+size = Vector2(25.600002, 25.600004)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b44r2"]
 size = Vector2(14.952675, 22.268114)
@@ -45,6 +45,7 @@ size = Vector2(14.952675, 22.268114)
 scale = Vector2(2.5, 2.5)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2058297414 groups=["player"]]
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_dewec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1889163727]
@@ -86,13 +87,13 @@ texture = ExtResource("7_52ee3")
 centered = false
 
 [node name="Succ" type="Sprite2D" parent="Player/Vacuum2" unique_id=1670679414]
-position = Vector2(78, 4.7683716e-07)
+position = Vector2(22.400002, -1.2000002)
 rotation = 1.5707964
 scale = Vector2(0.049963478, 0.049963478)
 texture = ExtResource("5_nn08x")
 
 [node name="SuccCollider" type="CollisionShape2D" parent="Player/Vacuum2" unique_id=912975859]
-position = Vector2(21.699995, -1.3999987)
+position = Vector2(21.999998, -1.1999997)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ysm7c")
 
