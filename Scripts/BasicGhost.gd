@@ -31,7 +31,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var min = Vector2(-50, -50)
 	var max = Vector2(50, 50)
 	linear_velocity = linear_velocity.clamp(min, max)
-	#print(linear_velocity)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
