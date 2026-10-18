@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dbd6pn17v85qs" path="res://Sprites/player/UntitledArtwork1 - 1.png" id="6_52ee3"]
 [ext_resource type="Texture2D" uid="uid://b8v0pei01614l" path="res://Sprites/vacuum.png" id="7_52ee3"]
 [ext_resource type="Texture2D" uid="uid://0nyq58qn40om" path="res://Sprites/player/UntitledArtwork1 - 2.png" id="7_bhhdu"]
-[ext_resource type="Script" uid="uid://c1irkpoue2wjn" path="res://Scripts/HealthCheck.gd" id="8_bhhdu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
 animations = [{
@@ -103,19 +102,5 @@ shape = SubResource("RectangleShape2D_ysm7c")
 position = Vector2(3.4496884, -0.27903017)
 scale = Vector2(1.0499377, -1.3041939)
 shape = SubResource("RectangleShape2D_b44r2")
-
-[node name="HP" type="Control" parent="." unique_id=1092674953]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="HP" unique_id=1871185306]
-layout_mode = 0
-offset_left = -97.99999
-offset_top = -64.399994
-offset_right = -27.999992
-offset_bottom = -41.399994
-script = ExtResource("8_bhhdu")
 
 [connection signal="body_entered" from="Player/Vacuum2" to="Player/Vacuum2" method="_on_body_entered"]

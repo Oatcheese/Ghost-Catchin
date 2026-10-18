@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Damage Collisions":
-		print("here")
-		GameManager.damage_player(1)
+		if (linear_velocity.x * -1 > 20 || linear_velocity.y * -1 > 20):
+			GameManager.damage_player(1)

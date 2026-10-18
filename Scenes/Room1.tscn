@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cl71xh20anbx2" path="res://Sprites/right-door.png" id="9_huy5m"]
 [ext_resource type="Texture2D" uid="uid://jcllp3aj3ki4" path="res://Sprites/right-door-open.png" id="10_a7g50"]
 [ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="12_o7l06"]
+[ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/GhostChaser.tscn" id="13_mp7kg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o7l06"]
 texture = ExtResource("1_3pgjm")
@@ -179,3 +180,6 @@ shape = SubResource("RectangleShape2D_iwtox")
 
 [node name="Item" parent="." unique_id=872984647 instance=ExtResource("12_o7l06")]
 position = Vector2(145.5, 138)
+
+[node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("13_mp7kg")]
+position = Vector2(622, 28)

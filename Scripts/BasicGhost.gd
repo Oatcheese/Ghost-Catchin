@@ -101,7 +101,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		tooClose = true
 	
 	if body.get_groups().has("Throwables"):
-		body.apply_impulse(playerPosition * 0.5, Vector2(0, 0))
+		body.apply_impulse(body.position.direction_to(playerPosition) * 1000)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
