@@ -39,7 +39,7 @@ size = Vector2(12.203125, 8.6875)
 size = Vector2(25.600002, 25.600004)
 
 [node name="PlayerNode" type="Node2D" unique_id=388349598]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(4, 4)
 
 [node name="Control2" type="Control" parent="." unique_id=926420938]
 layout_mode = 3
@@ -56,14 +56,13 @@ offset_bottom = 14.04
 script = ExtResource("8_bhhdu")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2058297414 groups=["player"]]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 script = ExtResource("1_dewec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1889163727]
 sprite_frames = SubResource("SpriteFrames_a35do")
 
 [node name="Control" type="Control" parent="Player" unique_id=540934993]
-visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
@@ -73,11 +72,11 @@ offset_bottom = -10.0
 
 [node name="VacuumProgress" type="ProgressBar" parent="Player/Control" unique_id=1866189371]
 layout_mode = 0
-offset_left = -49.000004
-offset_top = 13.0
-offset_right = 0.9999962
-offset_bottom = 33.612312
-scale = Vector2(1.9731189, 0.78275585)
+offset_left = -23.100002
+offset_top = 21.15
+offset_right = 26.899998
+offset_bottom = 41.762314
+scale = Vector2(1, 0.397)
 theme_override_styles/background = SubResource("StyleBoxFlat_5ixxa")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nn08x")
 show_percentage = false

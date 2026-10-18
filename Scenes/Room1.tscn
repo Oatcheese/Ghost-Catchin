@@ -11,7 +11,17 @@
 [ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Door.gd" id="8_pt40w"]
 [ext_resource type="Texture2D" uid="uid://cl71xh20anbx2" path="res://Sprites/right-door.png" id="9_huy5m"]
 [ext_resource type="Texture2D" uid="uid://jcllp3aj3ki4" path="res://Sprites/right-door-open.png" id="10_a7g50"]
-[ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="12_o7l06"]
+[ext_resource type="Texture2D" uid="uid://c7bcectfsove4" path="res://Sprites/table1.png" id="13_huy5m"]
+[ext_resource type="Texture2D" uid="uid://dmlsvauhl86rl" path="res://Sprites/candelabra/UntitledArtwork1 - 1.png" id="14_a7g50"]
+[ext_resource type="Texture2D" uid="uid://ci3qho3qo0igg" path="res://Sprites/candelabra/UntitledArtwork1 - 2.png" id="15_626qf"]
+[ext_resource type="Texture2D" uid="uid://bcs2xtyfpl2ni" path="res://Sprites/candelabra/UntitledArtwork1 - 3.png" id="16_wsvf8"]
+[ext_resource type="Texture2D" uid="uid://douv7kvkvrljx" path="res://Sprites/candelabra/UntitledArtwork1 - 4.png" id="17_r3rln"]
+[ext_resource type="Texture2D" uid="uid://bnubm5it04twd" path="res://Sprites/table4.png" id="18_626qf"]
+[ext_resource type="Script" uid="uid://weawunhv643" path="res://Scenes/animated_sprite_2d.gd" id="18_uaw4m"]
+[ext_resource type="Texture2D" uid="uid://b14i4glp2c36h" path="res://Sprites/table5.png" id="20_wsvf8"]
+[ext_resource type="Texture2D" uid="uid://qt0lsahulfi4" path="res://Sprites/bookshelf.png" id="21_r3rln"]
+[ext_resource type="Texture2D" uid="uid://bjdv3ns4ltve8" path="res://Sprites/book-open.png" id="22_r3rln"]
+[ext_resource type="Texture2D" uid="uid://bo4u8sgyjx800" path="res://Sprites/book.png" id="22_uaw4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o7l06"]
 texture = ExtResource("1_3pgjm")
@@ -115,6 +125,41 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwtox"]
 size = Vector2(64, 32)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_a7g50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_626qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wsvf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_r3rln")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a35do"]
+size = Vector2(38, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypaal"]
+size = Vector2(20.5, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3rln"]
+size = Vector2(53.499992, 130.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaw4m"]
+size = Vector2(35.5, 86.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_342na"]
+size = Vector2(17.5, 26.500002)
+
 [node name="Room1" type="Node2D" unique_id=329816156]
 position = Vector2(0, 24)
 scale = Vector2(2, 2)
@@ -123,7 +168,7 @@ scale = Vector2(2, 2)
 position = Vector2(624, 172)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=274395659]
-position = Vector2(304, 172)
+position = Vector2(280, 211.5)
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1588096385]
 position = Vector2(0, -12)
@@ -177,5 +222,73 @@ sprite_frames = SubResource("SpriteFrames_l44j7")
 position = Vector2(687, 63)
 shape = SubResource("RectangleShape2D_iwtox")
 
-[node name="Item" parent="." unique_id=872984647 instance=ExtResource("12_o7l06")]
-position = Vector2(145.5, 138)
+[node name="Table1" type="Sprite2D" parent="." unique_id=1692407260]
+position = Vector2(104.5, 235.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_huy5m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652235953]
+position = Vector2(588.5, 47.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_a35do")
+script = ExtResource("18_uaw4m")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=561637279]
+position = Vector2(50, 47.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_a35do")
+script = ExtResource("18_uaw4m")
+
+[node name="Table4" type="Sprite2D" parent="." unique_id=2078778025]
+position = Vector2(333.5, 285)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("18_626qf")
+
+[node name="Table5" type="Sprite2D" parent="Table4" unique_id=993939727]
+position = Vector2(-54.66667, -113.666664)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_wsvf8")
+
+[node name="Bookshelf" type="Sprite2D" parent="Table4" unique_id=186124605]
+position = Vector2(100.33334, -164)
+scale = Vector2(2, 2)
+texture = ExtResource("21_r3rln")
+
+[node name="Book" type="Sprite2D" parent="Table4" unique_id=1275381575]
+position = Vector2(115, -5.3333287)
+texture = ExtResource("22_uaw4m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1411628199]
+position = Vector2(104.5, 232)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1722881626]
+shape = SubResource("RectangleShape2D_a35do")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1047412329]
+position = Vector2(378.5, -161.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ypaal")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=668392978]
+position = Vector2(146.25, -124.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_r3rln")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" unique_id=145581535]
+position = Vector2(229.25, 48.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_uaw4m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2" unique_id=235432217]
+position = Vector2(-54.75, -160.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_342na")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1380737794]
+position = Vector2(483.5, -161)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_342na")
+
+[node name="BookOpen" type="Sprite2D" parent="." unique_id=259620621]
+position = Vector2(104.5, 225.5)
+texture = ExtResource("22_r3rln")
