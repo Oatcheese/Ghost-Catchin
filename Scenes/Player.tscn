@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://jka2s6ly0sly"]
 
 [ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="1_dewec"]
-[ext_resource type="Texture2D" uid="uid://mjb53sl3gii1" path="res://Sprites/6ChdiZE3Y84Kn6L9yY8Wtd.jpg" id="3_nn08x"]
 [ext_resource type="Script" uid="uid://jmm6wh3x7hlm" path="res://Scripts/VacuumSkillCheckBar.gd" id="4_5ixxa"]
 [ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scripts/Vacuum.gd" id="4_nn08x"]
 [ext_resource type="Texture2D" uid="uid://cn4swb7ic4h3e" path="res://Sprites/tornadoi.png" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://dbd6pn17v85qs" path="res://Sprites/player/UntitledArtwork1 - 1.png" id="6_52ee3"]
+[ext_resource type="Texture2D" uid="uid://b8v0pei01614l" path="res://Sprites/vacuum.png" id="7_52ee3"]
 [ext_resource type="Texture2D" uid="uid://0nyq58qn40om" path="res://Sprites/player/UntitledArtwork1 - 2.png" id="7_bhhdu"]
 [ext_resource type="Script" uid="uid://c1irkpoue2wjn" path="res://Scripts/HealthCheck.gd" id="8_bhhdu"]
 
@@ -36,6 +36,7 @@ bg_color = Color(0.48607922, 0.559899, 0.9783465, 1)
 size = Vector2(12.203125, 8.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
+size = Vector2(25.399998, 26.000002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b44r2"]
 size = Vector2(14.952675, 22.268114)
@@ -78,22 +79,21 @@ shape = SubResource("RectangleShape2D_bhhdu")
 collision_mask = 3
 script = ExtResource("4_nn08x")
 
+[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum2" unique_id=1583014815]
+position = Vector2(1.5999999, -4.4)
+scale = Vector2(0.3625, 0.3625)
+texture = ExtResource("7_52ee3")
+centered = false
+
 [node name="Succ" type="Sprite2D" parent="Player/Vacuum2" unique_id=1670679414]
 position = Vector2(78, 4.7683716e-07)
 rotation = 1.5707964
-scale = Vector2(0.04996348, 0.04996348)
+scale = Vector2(0.049963478, 0.049963478)
 texture = ExtResource("5_nn08x")
 
-[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum2" unique_id=1583014815]
-position = Vector2(14, 15)
-rotation = -1.5707964
-scale = Vector2(0.079500705, 0.10313376)
-texture = ExtResource("3_nn08x")
-centered = false
-
 [node name="SuccCollider" type="CollisionShape2D" parent="Player/Vacuum2" unique_id=912975859]
-visible = false
-position = Vector2(75, 0)
+position = Vector2(21.699995, -1.3999987)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ysm7c")
 
 [node name="Damage Collisions" type="Area2D" parent="Player" unique_id=891311204]
