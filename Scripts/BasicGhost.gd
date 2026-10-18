@@ -14,6 +14,7 @@ var vacc
 @export var min_player_distance := 130.0
 var orbit_angle := 0.0
 
+var ghost: AnimatedSprite2D = null
 var being_sucked := false
 @export var suck_speed := 150.0
 @export var capture_distance := 40.0
@@ -31,6 +32,8 @@ func _ready() -> void:
 	original_lock_rotation = lock_rotation
 	# Stagger ghosts so they don't all orbit in lockstep.
 	orbit_angle = randf() * TAU
+	ghost = get_node_or_null("AnimatedSprite2D")
+	ghost.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
