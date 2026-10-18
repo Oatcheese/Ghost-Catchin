@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://qt0lsahulfi4" path="res://Sprites/bookshelf.png" id="21_r3rln"]
 [ext_resource type="Texture2D" uid="uid://bjdv3ns4ltve8" path="res://Sprites/book-open.png" id="22_r3rln"]
 [ext_resource type="Texture2D" uid="uid://bo4u8sgyjx800" path="res://Sprites/book.png" id="22_uaw4m"]
+[ext_resource type="Texture2D" uid="uid://cbik5g44iy3d3" path="res://Sprites/pictrue.png" id="23_uaw4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o7l06"]
 texture = ExtResource("1_3pgjm")
@@ -292,3 +293,8 @@ shape = SubResource("RectangleShape2D_342na")
 [node name="BookOpen" type="Sprite2D" parent="." unique_id=259620621]
 position = Vector2(104.5, 225.5)
 texture = ExtResource("22_r3rln")
+
+[node name="Pictrue" type="Sprite2D" parent="." unique_id=1307093683]
+position = Vector2(128, 32.500004)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_uaw4m")
