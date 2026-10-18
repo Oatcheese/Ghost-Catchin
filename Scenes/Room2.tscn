@@ -273,4 +273,4 @@ position = Vector2(111, 63)
 shape = SubResource("RectangleShape2D_vr33r")
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("7_bbr00")]
-position = Vector2(126, -58)
+position = Vector2(541, 117)
