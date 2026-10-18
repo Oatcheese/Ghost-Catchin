@@ -1,9 +1,7 @@
 extends Node
 
 signal ghost_captured(amount: int)
-signal player_damaged(amount: int)
 signal room_change_requested(next_scene: PackedScene, spawn_marker: String)
-signal game_over()
 
 var score := 0
 var ghosts_captured := 0
@@ -28,5 +26,5 @@ func heal(amount: int = 1) -> void:
 	player_health = clamp(player_health + amount, 0, max_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

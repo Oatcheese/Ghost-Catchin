@@ -10,9 +10,6 @@
 radius = 258.00464
 height = 516.0093
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysm7c"]
-size = Vector2(48, 53.5)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
 animations = [{
 "frames": [{
@@ -33,12 +30,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a35do"]
+size = Vector2(48, 54)
+
 [node name="Ghost" type="Node2D" unique_id=2131525068]
 
 [node name="Ghost" type="RigidBody2D" parent="." unique_id=1043465661 groups=["Ghosts"]]
 position = Vector2(1.4210855e-14, 2.842171e-14)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_lbxpe")
 
@@ -50,16 +50,14 @@ position = Vector2(-2.3841858e-07, -2.842171e-14)
 scale = Vector2(0.3867308, 0.3867308)
 shape = SubResource("CapsuleShape2D_b44r2")
 
-[node name="GhostCollider" type="CollisionShape2D" parent="Ghost" unique_id=1645876694 groups=["Ghosts"]]
-position = Vector2(-1.4210855e-14, -0.75)
-shape = SubResource("RectangleShape2D_ysm7c")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ghost" unique_id=1405460677]
 position = Vector2(-1.4210855e-14, -2.842171e-14)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a35do")
 frame_progress = 0.8923654
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost" unique_id=522754909]
+position = Vector2(-1.4210855e-14, -1)
+shape = SubResource("RectangleShape2D_a35do")
+
 [connection signal="area_exited" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_body_exited"]
