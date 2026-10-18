@@ -18,17 +18,14 @@ func capture_ghost(amount: int = 1) -> void:
 
 func damage_player(amount: int = 1) -> void:
 	player_health -= amount
-	player_damaged.emit(amount)
 	if player_health <= 0:
-		game_over.emit()
+		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
+func get_health() -> int:
+	return player_health
 
 func heal(amount: int = 1) -> void:
 	player_health = clamp(player_health + amount, 0, max_health)
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

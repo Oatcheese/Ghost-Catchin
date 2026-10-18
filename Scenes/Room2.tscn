@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="7_bbr00"]
 [ext_resource type="Texture2D" uid="uid://dwb1vnmrpbu5e" path="res://Sprites/left-door-open.png" id="7_mdbp1"]
 [ext_resource type="Texture2D" uid="uid://b1vqskltuvyia" path="res://Sprites/top-door-open.png" id="11_iqqoj"]
+[ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="14_vpp8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpp8u"]
 texture = ExtResource("1_rx63n")
@@ -273,4 +274,7 @@ position = Vector2(111, 63)
 shape = SubResource("RectangleShape2D_vr33r")
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("7_bbr00")]
-position = Vector2(541, 117)
+position = Vector2(126, -58)
+
+[node name="Item" parent="." unique_id=872984647 instance=ExtResource("14_vpp8u")]
+position = Vector2(196, 152.5)
