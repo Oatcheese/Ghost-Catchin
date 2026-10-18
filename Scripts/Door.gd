@@ -13,6 +13,9 @@ var _next_room: PackedScene = null
 
 # Reference to the door's AnimatedSprite2D (null if this door uses a plain Sprite2D).
 var _animated_sprite: AnimatedSprite2D = null
+# Optional "TDoorMask" child (Sprite2D or TileMapLayer) drawn over the player
+# while they stand in the doorway, so stepping through reads as 3D.
+var _tdoor_mask: CanvasItem = null
 
 func _get_next_room() -> PackedScene:
 	if _next_room == null and next_room_path != "":
@@ -23,12 +26,26 @@ func _get_next_room() -> PackedScene:
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	_animated_sprite = get_node_or_null("AnimatedSprite2D")
+	_tdoor_mask = get_node_or_null("TDoorMask") as CanvasItem
 
-	# Optional: a smaller child Area2D named "InteractionArea" handles room changes.
+	if _tdoor_mask:
+		_tdoor_mask.visible = false        # hidden until the player reaches the top
+		_tdoor_mask.z_index = 10           # draw over the player
+		_tdoor_mask.z_as_relative = false  # absolute, ignores parent z_index
+	else:
+		push_warning("TDoorMask not found on " + name)
+
 	var interaction_area = get_node_or_null("InteractionArea")
 	if interaction_area:
 		interaction_area.body_entered.connect(_on_interaction_area_body_entered)
 		interaction_area.body_exited.connect(_on_interaction_area_body_exited)
+
+	var top_door_area = get_node_or_null("TopDoorArea")
+	if top_door_area:
+		top_door_area.body_entered.connect(_on_tdoor_area_body_entered)
+		top_door_area.body_exited.connect(_on_tdoor_area_body_exited)
+	else:
+		push_warning("TopDoorArea not found on " + name)
 
 # Switch the door's animated sprite to the open or closed frame.
 func _set_door_opened(opened: bool) -> void:
@@ -47,6 +64,14 @@ func _on_body_entered(body: Node2D) -> void:
 		var next_room = _get_next_room()
 		if next_room:
 			GameManager.room_change_requested.emit(next_room, spawn_marker_name)
+			
+func _on_tdoor_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and _tdoor_mask:
+		_tdoor_mask.visible = true
+
+func _on_tdoor_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player") and _tdoor_mask:
+		_tdoor_mask.visible = false
 
 # Player is standing on the door: change rooms.
 func _on_interaction_area_body_entered(body: Node2D) -> void:
