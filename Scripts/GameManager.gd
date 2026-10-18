@@ -17,6 +17,7 @@ func capture_ghost(amount: int = 1) -> void:
 func damage_player(amount: int = 1) -> void:
 	player_health -= amount
 	if player_health <= 0:
+		set_deferred("disabled", true)
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 func get_health() -> int:

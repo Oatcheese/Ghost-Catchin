@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://1hwoe8hwx37e" path="res://Sprites/lava-corner.png" id="9_avl2w"]
 [ext_resource type="Texture2D" uid="uid://cqsiu3hnx73hb" path="res://Sprites/bottom-door-open.png" id="9_retx1"]
 [ext_resource type="Texture2D" uid="uid://bma3re7yqfxuy" path="res://Sprites/lava-wall.png" id="10_1le2d"]
+[ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/GhostChaser.tscn" id="14_avl2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bur1i"]
 texture = ExtResource("1_retx1")
@@ -267,3 +268,6 @@ shape = SubResource("RectangleShape2D_avl2w")
 position = Vector2(320, 276)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_osw5t")
+
+[node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("14_avl2w")]
+position = Vector2(504.5, 188.5)
