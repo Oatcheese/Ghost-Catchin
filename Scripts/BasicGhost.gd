@@ -6,6 +6,14 @@ var tooClose
 var velocity
 var vacc
 
+# The ghost circles the player on a ring instead of charging straight into them.
+@export var orbit_radius := 140.0
+@export var orbit_angular_speed := 1.2  # radians per second
+# The ghost sprite is ~160px wide, so it must keep its centre at least ~120px
+# away (half ghost + half player) to avoid overlapping the player.
+@export var min_player_distance := 130.0
+var orbit_angle := 0.0
+
 var being_sucked := false
 @export var suck_speed := 150.0
 @export var capture_distance := 40.0
@@ -21,6 +29,8 @@ func _ready() -> void:
 	original_angular_damp = angular_damp
 	original_gravity_scale = gravity_scale
 	original_lock_rotation = lock_rotation
+	# Stagger ghosts so they don't all orbit in lockstep.
+	orbit_angle = randf() * TAU
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,11 +38,11 @@ func _process(delta: float) -> void:
 	playerPosition = get_node("/root/Root/PlayerNode/Player").global_position
 	var ghost_pos = global_position
 
-	# If the vacuum is sucking this ghost, pull it toward the vacuum.
+	# If the vacuum is sucking this ghost, pull it into the vacuum nozzle (the
+	# Succ sprite), not into the player standing behind it.
 	if being_sucked and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		var vacuum_node = get_node("/root/Root/PlayerNode/Player/Vacuum2")
-		var vacuum_pos = vacuum_node.global_position if vacuum_node != null else playerPosition
-		var dir = vacuum_pos - ghost_pos
+		var nozzle_pos = vacc.global_position if is_instance_valid(vacc) else playerPosition
+		var dir = nozzle_pos - ghost_pos
 		linear_velocity = linear_velocity.move_toward(dir.normalized() * suck_speed, suck_speed * 10 * delta)
 		# Let the vacuum handle capture timing.
 		return
@@ -40,12 +50,19 @@ func _process(delta: float) -> void:
 		# LMB was released before capture.
 		being_sucked = false
 
-	if tooClose:
-		# Flee directly away from the player.
-		enemyDirection = ghost_pos.direction_to(playerPosition) * -1
+	# Orbit the player by steering toward a point on a ring that keeps spinning.
+	orbit_angle += orbit_angular_speed * delta
+	var dist_to_player = ghost_pos.distance_to(playerPosition)
+	var orbit_target = playerPosition + Vector2(cos(orbit_angle), sin(orbit_angle)) * orbit_radius
+
+	if dist_to_player < min_player_distance or tooClose:
+		# Back away so the ghost never lands on top of the player.
+		enemyDirection = ghost_pos.direction_to(playerPosition) * -1.0
 	else:
-			# Chase the player.
-		enemyDirection = ghost_pos.direction_to(playerPosition)
+		enemyDirection = ghost_pos.direction_to(orbit_target)
+		# Ease off as we close in so momentum can't carry us through the ring.
+		enemyDirection *= clampf(dist_to_player / orbit_radius, 0.3, 1.0)
+
 	if enemyDirection.length() > 0 and not being_sucked:
 		apply_impulse(enemyDirection * enemySpeed, Vector2(0, 0))
 
