@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="7_bbr00"]
 [ext_resource type="Texture2D" uid="uid://dwb1vnmrpbu5e" path="res://Sprites/left-door-open.png" id="7_mdbp1"]
 [ext_resource type="Texture2D" uid="uid://b1vqskltuvyia" path="res://Sprites/top-door-open.png" id="11_iqqoj"]
+[ext_resource type="Texture2D" uid="uid://bywhhn18kyqai" path="res://Sprites/top-door-mask.png" id="14_vpp8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpp8u"]
 texture = ExtResource("1_rx63n")
@@ -142,6 +143,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lun8n"]
+size = Vector2(32, 32)
+
 [node name="Room2" type="Node2D" unique_id=329816156]
 position = Vector2(0, 24)
 scale = Vector2(2, 2)
@@ -256,6 +260,13 @@ script = ExtResource("3_erksf")
 next_room_path = "res://Scenes/Room3.tscn"
 spawn_marker_name = "BottomDoorMark"
 
+[node name="TDoorMask" type="Sprite2D" parent="TopDoor" unique_id=1813640729]
+z_index = 10
+z_as_relative = false
+position = Vector2(95, 63)
+rotation = -1.5707964
+texture = ExtResource("14_vpp8u")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor" unique_id=449003386]
 position = Vector2(72, 63)
 shape = SubResource("RectangleShape2D_a35do")
@@ -271,6 +282,13 @@ frame_progress = 0.73624223
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor/InteractionArea" unique_id=1507198000]
 position = Vector2(111, 63)
 shape = SubResource("RectangleShape2D_vr33r")
+
+[node name="TopDoorArea" type="Area2D" parent="TopDoor" unique_id=347995900]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor/TopDoorArea" unique_id=285593872]
+position = Vector2(95, 62.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_lun8n")
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("7_bbr00")]
 position = Vector2(541, 117)
