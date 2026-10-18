@@ -7,7 +7,7 @@ func reset() -> void:
 	value = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if get_parent() != null and get_parent().visible:
 		value = lerp(value, target, 0.15)
 	else:

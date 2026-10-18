@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="7_bbr00"]
 [ext_resource type="Texture2D" uid="uid://dwb1vnmrpbu5e" path="res://Sprites/left-door-open.png" id="7_mdbp1"]
 [ext_resource type="Texture2D" uid="uid://b1vqskltuvyia" path="res://Sprites/top-door-open.png" id="11_iqqoj"]
+[ext_resource type="Texture2D" uid="uid://bywhhn18kyqai" path="res://Sprites/top-door-mask.png" id="13_rsckw"]
 [ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="14_vpp8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpp8u"]
@@ -143,6 +144,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtn4k"]
+texture = ExtResource("13_rsckw")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt4vs"]
+texture = ExtResource("1_u5puh")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dkvp"]
+texture = ExtResource("2_7v5bi")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vgdee"]
+sources/0 = SubResource("TileSetAtlasSource_jtn4k")
+sources/1 = SubResource("TileSetAtlasSource_dt4vs")
+sources/2 = SubResource("TileSetAtlasSource_5dkvp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lun8n"]
+size = Vector2(31.5, 32)
+
 [node name="Room2" type="Node2D" unique_id=329816156]
 position = Vector2(0, 24)
 scale = Vector2(2, 2)
@@ -265,13 +295,24 @@ shape = SubResource("RectangleShape2D_a35do")
 position = Vector2(95, 63)
 rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_vgdee")
-frame_progress = 0.73624223
+frame_progress = 0.94922143
+
+[node name="TDoorMask" type="TileMapLayer" parent="TopDoor" unique_id=942856593]
+position = Vector2(79, 79)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAGAAAP7/AAABAAAAAGABAP//AAAAAAEAAGABAP7/AAABAAEAAGAAAAEAAgAAAAAAAGAAAAAAAgABAAAAAGABAAEAAgAAAAEAAGABAAAAAgABAAEAAGAAAP3/AgAAAAAAAGAAAPz/AgABAAAAAGABAP3/AgAAAAEAAGABAPz/AgABAAEAAGD+/wEAAQAAAAAAAGD+/wAAAQABAAAAAGD//wEAAQAAAAEAAGD//wAAAQABAAEAAGD+////AQAAAAAAAGD+//7/AQABAAAAAGD/////AQAAAAEAAGD///7/AQABAAEAAGD+//3/AQAAAAAAAGD+//z/AQABAAAAAGD///3/AQAAAAEAAGD///z/AQABAAEAAGA=")
+tile_set = SubResource("TileSet_vgdee")
 
 [node name="InteractionArea" type="Area2D" parent="TopDoor" unique_id=855341216]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor/InteractionArea" unique_id=1507198000]
 position = Vector2(111, 63)
 shape = SubResource("RectangleShape2D_vr33r")
+
+[node name="TopDoorArea" type="Area2D" parent="TopDoor" unique_id=1888273850]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor/TopDoorArea" unique_id=1402528633]
+position = Vector2(94.75, 63)
+shape = SubResource("RectangleShape2D_lun8n")
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("7_bbr00")]
 position = Vector2(126, -58)
