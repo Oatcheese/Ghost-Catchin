@@ -32,8 +32,6 @@ func _ready() -> void:
 		_tdoor_mask.visible = false        # hidden until the player reaches the top
 		_tdoor_mask.z_index = 10           # draw over the player
 		_tdoor_mask.z_as_relative = false  # absolute, ignores parent z_index
-	else:
-		push_warning("TDoorMask not found on " + name)
 
 	var interaction_area = get_node_or_null("InteractionArea")
 	if interaction_area:
@@ -44,8 +42,6 @@ func _ready() -> void:
 	if top_door_area:
 		top_door_area.body_entered.connect(_on_tdoor_area_body_entered)
 		top_door_area.body_exited.connect(_on_tdoor_area_body_exited)
-	else:
-		push_warning("TopDoorArea not found on " + name)
 
 # Switch the door's animated sprite to the open or closed frame.
 func _set_door_opened(opened: bool) -> void:
@@ -84,5 +80,5 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
