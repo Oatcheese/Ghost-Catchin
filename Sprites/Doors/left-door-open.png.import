@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqsiu3hnx73hb"
-path="res://.godot/imported/bottom-door-open.png-7355598f64118a29b4fedafdc6aa55da.ctex"
+uid="uid://dwb1vnmrpbu5e"
+path="res://.godot/imported/left-door-open.png-bd1739b30d53faadbc3508c25dc6aaf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bottom-door-open.png"
-dest_files=["res://.godot/imported/bottom-door-open.png-7355598f64118a29b4fedafdc6aa55da.ctex"]
+source_file="res://Sprites/Doors/left-door-open.png"
+dest_files=["res://.godot/imported/left-door-open.png-bd1739b30d53faadbc3508c25dc6aaf7.ctex"]
 
 [params]
 

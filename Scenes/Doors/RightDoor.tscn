@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://s8n7odewuimf"]
 
-[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Door.gd" id="1_7mbvs"]
-[ext_resource type="Texture2D" uid="uid://cl71xh20anbx2" path="res://Sprites/right-door.png" id="2_1fk65"]
-[ext_resource type="Texture2D" uid="uid://jcllp3aj3ki4" path="res://Sprites/right-door-open.png" id="3_bgsld"]
+[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Doors/Door.gd" id="1_b1bnq"]
+[ext_resource type="Texture2D" uid="uid://cl71xh20anbx2" path="res://Sprites/Doors/right-door.png" id="2_1fk65"]
+[ext_resource type="Texture2D" uid="uid://jcllp3aj3ki4" path="res://Sprites/Doors/right-door-open.png" id="3_bgsld"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vxo0x"]
 animations = [{
@@ -24,8 +24,8 @@ size = Vector2(64, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g50tm"]
 size = Vector2(14, 32)
 
-[node name="RDoor" type="Node2D" unique_id=1785350478]
-script = ExtResource("1_7mbvs")
+[node name="RightDoor" type="Node2D" unique_id=1785350478]
+script = ExtResource("1_b1bnq")
 
 [node name="DoorSprite" type="AnimatedSprite2D" parent="." unique_id=1938222797]
 sprite_frames = SubResource("SpriteFrames_vxo0x")
@@ -37,7 +37,7 @@ position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_kqji6")
 
 [node name="TeleportArea" type="Area2D" parent="." unique_id=1002687737]
+position = Vector2(23, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea" unique_id=933620260]
-position = Vector2(23, 0)
 shape = SubResource("RectangleShape2D_g50tm")
