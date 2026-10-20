@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b6ap2u5yygmll"]
 
 [ext_resource type="Script" uid="uid://05iip0esavjc" path="res://Scripts/ChaserGhost.gd" id="1_t5o52"]
-[ext_resource type="Texture2D" uid="uid://crgoc2e7inb6r" path="res://Sprites/ghost/UntitledArtwork1 - 1.png" id="2_4q41u"]
-[ext_resource type="Texture2D" uid="uid://c6asjqjbodkfk" path="res://Sprites/ghost/UntitledArtwork1 - 2.png" id="3_jm44r"]
-[ext_resource type="Texture2D" uid="uid://bpm1br5ykvhjk" path="res://Sprites/ghost/UntitledArtwork1 - 3.png" id="4_3v0bj"]
-[ext_resource type="Texture2D" uid="uid://clhp5bs0klbdd" path="res://Sprites/ghost/UntitledArtwork1 - 4.png" id="5_51k3l"]
+[ext_resource type="Texture2D" uid="uid://crgoc2e7inb6r" path="res://Sprites/Ghost/UntitledArtwork1 - 1.png" id="2_4q41u"]
+[ext_resource type="Texture2D" uid="uid://c6asjqjbodkfk" path="res://Sprites/Ghost/UntitledArtwork1 - 2.png" id="3_jm44r"]
+[ext_resource type="Texture2D" uid="uid://bpm1br5ykvhjk" path="res://Sprites/Ghost/UntitledArtwork1 - 3.png" id="4_3v0bj"]
+[ext_resource type="Texture2D" uid="uid://clhp5bs0klbdd" path="res://Sprites/Ghost/UntitledArtwork1 - 4.png" id="5_51k3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf5dq"]
 size = Vector2(124.11734, 137.04623)

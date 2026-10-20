@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqrsyad80mqdn"]
 
 [ext_resource type="Script" uid="uid://id0lmqneqbhb" path="res://Scripts/ThrownItem.gd" id="1_2oiv6"]
-[ext_resource type="Texture2D" uid="uid://bjdv3ns4ltve8" path="res://Sprites/book-open.png" id="2_6oc8a"]
+[ext_resource type="Texture2D" uid="uid://bjdv3ns4ltve8" path="res://Sprites/Items/Book/book-open.png" id="2_6oc8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2oiv6"]
 size = Vector2(29, 25)
