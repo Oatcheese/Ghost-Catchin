@@ -8,11 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dagp60u8bfevk" path="res://Sprites/lava-full.png" id="5_osw5t"]
 [ext_resource type="Texture2D" uid="uid://cr26771hxute6" path="res://Sprites/floor-tile.png" id="6_qrwqm"]
 [ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/wall-tile.png" id="7_osw5t"]
-[ext_resource type="Texture2D" uid="uid://rnr4d2lbc04h" path="res://Sprites/Doors/bottom-door.png" id="8_6ofnw"]
-[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Doors/Door.gd" id="8_pwwwv"]
 [ext_resource type="Texture2D" uid="uid://1hwoe8hwx37e" path="res://Sprites/lava-corner.png" id="9_avl2w"]
-[ext_resource type="Texture2D" uid="uid://cqsiu3hnx73hb" path="res://Sprites/Doors/bottom-door-open.png" id="9_retx1"]
 [ext_resource type="Texture2D" uid="uid://bma3re7yqfxuy" path="res://Sprites/lava-wall.png" id="10_1le2d"]
+[ext_resource type="PackedScene" uid="uid://dqsrasa51h5fq" path="res://Scenes/Doors/BottomDoor.tscn" id="12_qrwqm"]
 [ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/GhostChaser.tscn" id="14_avl2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bur1i"]
@@ -114,26 +112,6 @@ size = Vector2(32, 256)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqlqm"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ofnw"]
-size = Vector2(14, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_6ofnw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_retx1")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_retx1"]
-size = Vector2(64, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a35do"]
 size = Vector2(32, 64)
 
@@ -203,28 +181,6 @@ shape = SubResource("RectangleShape2D_hvsx7")
 position = Vector2(624, 192)
 shape = SubResource("RectangleShape2D_jqlqm")
 
-[node name="BottomDoor" type="Area2D" parent="." unique_id=821215064]
-position = Vector2(-79, 116.5)
-script = ExtResource("8_pwwwv")
-next_room_path = "res://Scenes/Room2.tscn"
-spawn_marker_name = "TopDoorMark"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDoor" unique_id=387304433]
-position = Vector2(415, 246)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_6ofnw")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BottomDoor" unique_id=244440026]
-position = Vector2(415, 223)
-sprite_frames = SubResource("SpriteFrames_a35do")
-
-[node name="InteractionArea" type="Area2D" parent="BottomDoor" unique_id=240425264]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDoor/InteractionArea" unique_id=993520706]
-position = Vector2(415, 207)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_retx1")
-
 [node name="Obstacles" type="StaticBody2D" parent="." unique_id=1431515148]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles" unique_id=53879520]
@@ -271,3 +227,6 @@ shape = SubResource("RectangleShape2D_osw5t")
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("14_avl2w")]
 position = Vector2(504.5, 188.5)
+
+[node name="BottomDoor" parent="." unique_id=910077795 instance=ExtResource("12_qrwqm")]
+position = Vector2(336, 339.5)
