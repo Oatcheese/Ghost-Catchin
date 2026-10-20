@@ -70,24 +70,25 @@ script = ExtResource("4_5ixxa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=860557823]
 shape = SubResource("RectangleShape2D_bhhdu")
 
-[node name="Vacuum2" type="Area2D" parent="Player" unique_id=1206460143]
-position = Vector2(6.3333335, -9.083334)
+[node name="Vacuum" type="Area2D" parent="Player" unique_id=1206460143]
+position = Vector2(-2, -9)
 collision_mask = 3
 script = ExtResource("4_nn08x")
 
-[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum2" unique_id=1583014815]
+[node name="VacuumSprite" type="Sprite2D" parent="Player/Vacuum" unique_id=1583014815]
+position = Vector2(6.25, 0.46666718)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_52ee3")
 
-[node name="Succ" type="Sprite2D" parent="Player/Vacuum2" unique_id=1670679414]
-position = Vector2(15, -2.8333335)
+[node name="Succ" type="Sprite2D" parent="Player/Vacuum" unique_id=1670679414]
+position = Vector2(21.25, -2.3666663)
 rotation = 1.5707964
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_nn08x")
 
-[node name="SuccCollider" type="CollisionShape2D" parent="Player/Vacuum2" unique_id=912975859]
-position = Vector2(14.999999, -2.6666665)
+[node name="SuccCollider" type="CollisionShape2D" parent="Player/Vacuum" unique_id=912975859]
+position = Vector2(21.249998, -2.1999993)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ysm7c")
 
-[connection signal="body_entered" from="Player/Vacuum2" to="Player/Vacuum2" method="_on_body_entered"]
+[connection signal="body_entered" from="Player/Vacuum" to="Player/Vacuum" method="_on_body_entered"]
