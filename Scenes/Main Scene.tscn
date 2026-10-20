@@ -9,5 +9,4 @@ script = ExtResource("1_ke1vn")
 [node name="RoomContainer" type="Node2D" parent="." unique_id=580736625]
 
 [node name="PlayerNode" parent="." unique_id=388349598 instance=ExtResource("2_tn1qc")]
-position = Vector2(163, 117)
 scale = Vector2(1, 1)
