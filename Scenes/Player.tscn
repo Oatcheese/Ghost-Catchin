@@ -41,7 +41,7 @@ size = Vector2(25.600002, 25.600004)
 scale = Vector2(4, 4)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2058297414 groups=["player"]]
-scale = Vector2(3, 3)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_dewec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1889163727]
