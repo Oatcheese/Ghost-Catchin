@@ -1,13 +1,19 @@
 extends Node2D
 
 @export var spawn_marker_name: String = ""
-@export var _next_room: PackedScene = null
+@export_file("*.tscn") var next_room_path: String = ""
 
+var _next_room: PackedScene = null
 var _door_sprite: AnimatedSprite2D = null
 var _interaction_area: Area2D = null
 var _teleport_area: Area2D = null
 var _mask_area: Area2D = null
 var _mask: CanvasItem = null
+
+func _get_next_room() -> PackedScene:
+	if _next_room == null and next_room_path != "":
+		_next_room = load(next_room_path)
+	return _next_room
 
 func _ready() -> void:
 	_interaction_area = get_node_or_null("InteractionArea")
@@ -32,8 +38,9 @@ func _ready() -> void:
 
 func _on_teleport_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		var next_room := _get_next_room()
 		if _next_room:
-			GameManager.room_change_requested.emit(_next_room, spawn_marker_name)
+			GameManager.room_change_requested.emit(next_room, spawn_marker_name)
 
 func _on_interaction_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

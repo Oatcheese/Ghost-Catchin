@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqsrasa51h5fq"]
 
 [ext_resource type="Texture2D" uid="uid://rnr4d2lbc04h" path="res://Sprites/Doors/bottom-door.png" id="1_r1oog"]
-[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Doors/Door.gd" id="1_sx37k"]
+[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Door.gd" id="1_sx37k"]
 [ext_resource type="Texture2D" uid="uid://cqsiu3hnx73hb" path="res://Sprites/Doors/bottom-door-open.png" id="2_sx37k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qcfhw"]
