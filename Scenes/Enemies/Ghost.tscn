@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmjfrly4grsig"]
 
-[ext_resource type="Script" uid="uid://vh00pda4gbsm" path="res://Scripts/BasicGhost.gd" id="1_lbxpe"]
+[ext_resource type="Script" uid="uid://vh00pda4gbsm" path="res://Scripts/Enemies/Ghost.gd" id="1_lbxpe"]
 [ext_resource type="Texture2D" uid="uid://crgoc2e7inb6r" path="res://Sprites/Ghost/UntitledArtwork1 - 1.png" id="2_uf5dq"]
 [ext_resource type="Texture2D" uid="uid://c6asjqjbodkfk" path="res://Sprites/Ghost/UntitledArtwork1 - 2.png" id="3_mrk51"]
 [ext_resource type="Texture2D" uid="uid://bpm1br5ykvhjk" path="res://Sprites/Ghost/UntitledArtwork1 - 3.png" id="4_lbxpe"]

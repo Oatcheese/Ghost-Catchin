@@ -4,7 +4,6 @@ var enemySpeed = 20.0
 var playerPosition
 var tooClose
 var velocity
-var vacc
 
 # The ghost circles the player on a ring instead of charging straight into them.
 @export var orbit_radius := 140.0
@@ -24,7 +23,6 @@ var original_lock_rotation := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	vacc = get_node("/root/Root/PlayerNode/Player/Vacuum2/Succ")
 	original_linear_damp = linear_damp
 	original_angular_damp = angular_damp
 	original_gravity_scale = gravity_scale
@@ -41,8 +39,7 @@ func _process(delta: float) -> void:
 	# If the vacuum is sucking this ghost, pull it into the vacuum nozzle (the
 	# Succ sprite), not into the player standing behind it.
 	if being_sucked and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		var nozzle_pos = vacc.global_position if is_instance_valid(vacc) else playerPosition
-		var dir = nozzle_pos - ghost_pos
+		var dir = playerPosition - ghost_pos
 		linear_velocity = linear_velocity.move_toward(dir.normalized() * suck_speed, suck_speed * 10 * delta)
 		# Let the vacuum handle capture timing.
 		return
@@ -58,11 +55,11 @@ func _process(delta: float) -> void:
 	if enemyDirection.length() > 0 and not being_sucked:
 		apply_impulse(enemyDirection * enemySpeed, Vector2(0, 0))
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	if not being_sucked:
-		var min = Vector2(-200, -200)
-		var max = Vector2(200, 200)
-		linear_velocity = linear_velocity.clamp(min, max)
+		var minVel = Vector2(-200, -200)
+		var maxVel = Vector2(200, 200)
+		linear_velocity = linear_velocity.clamp(minVel, maxVel)
 
 func start_being_sucked() -> void:
 	being_sucked = true

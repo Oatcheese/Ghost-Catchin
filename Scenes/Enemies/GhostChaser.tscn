@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6ap2u5yygmll"]
 
-[ext_resource type="Script" uid="uid://05iip0esavjc" path="res://Scripts/ChaserGhost.gd" id="1_t5o52"]
+[ext_resource type="Script" uid="uid://05iip0esavjc" path="res://Scripts/Enemies/GhostChaser.gd" id="1_t5o52"]
 [ext_resource type="Texture2D" uid="uid://crgoc2e7inb6r" path="res://Sprites/Ghost/UntitledArtwork1 - 1.png" id="2_4q41u"]
 [ext_resource type="Texture2D" uid="uid://c6asjqjbodkfk" path="res://Sprites/Ghost/UntitledArtwork1 - 2.png" id="3_jm44r"]
 [ext_resource type="Texture2D" uid="uid://bpm1br5ykvhjk" path="res://Sprites/Ghost/UntitledArtwork1 - 3.png" id="4_3v0bj"]

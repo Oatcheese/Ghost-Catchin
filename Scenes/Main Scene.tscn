@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://suypckjkth6f"]
 
-[ext_resource type="Script" uid="uid://40k05c17mcel" path="res://Scripts/RoomManager.gd" id="1_ke1vn"]
+[ext_resource type="Script" uid="uid://40k05c17mcel" path="res://Scripts/Global/RoomManager.gd" id="1_ke1vn"]
 [ext_resource type="PackedScene" uid="uid://jka2s6ly0sly" path="res://Scenes/Player.tscn" id="2_tn1qc"]
 
 [node name="Root" type="Node2D" unique_id=38066090]
