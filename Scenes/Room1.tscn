@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cr26771hxute6" path="res://Sprites/floor-tile.png" id="6_olvpm"]
 [ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/wall-tile.png" id="7_xqepp"]
 [ext_resource type="PackedScene" uid="uid://s8n7odewuimf" path="res://Scenes/Doors/RightDoor.tscn" id="9_626qf"]
+[ext_resource type="PackedScene" uid="uid://dpd6b4rc3pmy4" path="res://Scenes/Room2.tscn" id="10_wsvf8"]
 [ext_resource type="Texture2D" uid="uid://c7bcectfsove4" path="res://Sprites/table1.png" id="13_huy5m"]
 [ext_resource type="Texture2D" uid="uid://dmlsvauhl86rl" path="res://Sprites/candelabra/UntitledArtwork1 - 1.png" id="14_a7g50"]
 [ext_resource type="Texture2D" uid="uid://ci3qho3qo0igg" path="res://Sprites/candelabra/UntitledArtwork1 - 2.png" id="15_626qf"]
@@ -157,7 +158,8 @@ tile_set = SubResource("TileSet_ro2ln")
 
 [node name="RDoor" parent="." unique_id=1785350478 instance=ExtResource("9_626qf")]
 position = Vector2(623.5, 176)
-next_room_path = "res://Scenes/Room2.tscn"
+spawn_marker_name = "LeftDoorSpawn"
+_next_room = ExtResource("10_wsvf8")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1780022640]
 

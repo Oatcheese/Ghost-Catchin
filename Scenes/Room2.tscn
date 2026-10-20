@@ -111,7 +111,7 @@ size = Vector2(32, 32)
 position = Vector2(0, 24)
 scale = Vector2(2, 2)
 
-[node name="LeftDoorMark" type="Marker2D" parent="." unique_id=1924532586]
+[node name="LeftDoorSpawn" type="Marker2D" parent="." unique_id=1924532586]
 position = Vector2(16, 172)
 
 [node name="TopDoorMark" type="Marker2D" parent="." unique_id=1068743458]
@@ -129,7 +129,6 @@ tile_set = SubResource("TileSet_7bevr")
 
 [node name="TopDoor" parent="." unique_id=993216977 instance=ExtResource("8_iqqoj")]
 position = Vector2(336, 43.5)
-next_room_path = "res://Scenes/Room3.tscn"
 spawn_marker_name = "BottomDoorMark"
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=822178724]
@@ -200,7 +199,6 @@ shape = SubResource("RectangleShape2D_we5c8")
 
 [node name="LeftDoor" parent="." unique_id=1131350925 instance=ExtResource("8_rsckw")]
 position = Vector2(16, 172)
-next_room_path = "res://Scenes/Room1.tscn"
 spawn_marker_name = "RDoorMark"
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("7_bbr00")]
