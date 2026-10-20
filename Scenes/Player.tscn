@@ -103,7 +103,7 @@ scale = Vector2(0.049963478, 0.049963478)
 texture = ExtResource("5_nn08x")
 
 [node name="SuccCollider" type="CollisionShape2D" parent="Player/Vacuum2" unique_id=912975859]
-position = Vector2(22.720001, -2.4)
+position = Vector2(22.833334, -2.1666665)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ysm7c")
 

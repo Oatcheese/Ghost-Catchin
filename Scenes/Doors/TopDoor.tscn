@@ -1,0 +1,87 @@
+[gd_scene format=4 uid="uid://c2ahyviycpspv"]
+
+[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Doors/Door.gd" id="1_1ko6w"]
+[ext_resource type="Texture2D" uid="uid://dr08l7qbbr0bb" path="res://Sprites/Doors/top-door.png" id="2_v5lka"]
+[ext_resource type="Texture2D" uid="uid://b1vqskltuvyia" path="res://Sprites/Doors/top-door-open.png" id="3_n0vcw"]
+[ext_resource type="Texture2D" uid="uid://bywhhn18kyqai" path="res://Sprites/Doors/top-door-mask.png" id="4_d7o7x"]
+[ext_resource type="Texture2D" uid="uid://c2rdp2f11y6nn" path="res://Sprites/roof-wall.png" id="5_tia6r"]
+[ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/wall-tile.png" id="6_xlxkp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e335j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v5lka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n0vcw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_la4co"]
+texture = ExtResource("4_d7o7x")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agk85"]
+texture = ExtResource("5_tia6r")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45k87"]
+texture = ExtResource("6_xlxkp")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yv0qs"]
+sources/0 = SubResource("TileSetAtlasSource_la4co")
+sources/1 = SubResource("TileSetAtlasSource_agk85")
+sources/2 = SubResource("TileSetAtlasSource_45k87")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63xg6"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7ke"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1axu3"]
+size = Vector2(32, 14)
+
+[node name="TopDoor" type="Node2D" unique_id=993216977]
+script = ExtResource("1_1ko6w")
+
+[node name="DoorSprite" type="AnimatedSprite2D" parent="." unique_id=715453032]
+sprite_frames = SubResource("SpriteFrames_e335j")
+
+[node name="TopDoorMask" type="TileMapLayer" parent="." unique_id=1687932308]
+position = Vector2(-16, -16)
+rotation = 1.5707964
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAGAAAP7/AAABAAAAAGABAP//AAAAAAEAAGABAP7/AAABAAEAAGAAAAEAAgAAAAAAAGAAAAAAAgABAAAAAGABAAEAAgAAAAEAAGABAAAAAgABAAEAAGAAAP3/AgAAAAAAAGAAAPz/AgABAAAAAGABAP3/AgAAAAEAAGABAPz/AgABAAEAAGD+/wEAAQAAAAAAAGD+/wAAAQABAAAAAGD//wEAAQAAAAEAAGD//wAAAQABAAEAAGD+////AQAAAAAAAGD+//7/AQABAAAAAGD/////AQAAAAEAAGD///7/AQABAAEAAGD+//3/AQAAAAAAAGD+//z/AQABAAAAAGD///3/AQAAAAEAAGD///z/AQABAAEAAGA=")
+tile_set = SubResource("TileSet_yv0qs")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=358924679]
+position = Vector2(0, 16)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=373631999]
+shape = SubResource("RectangleShape2D_63xg6")
+
+[node name="MaskArea" type="Area2D" parent="." unique_id=883649000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaskArea" unique_id=250557438]
+shape = SubResource("RectangleShape2D_fj7ke")
+
+[node name="TeleportArea" type="Area2D" parent="." unique_id=1061641934]
+position = Vector2(0, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea" unique_id=595214372]
+shape = SubResource("RectangleShape2D_1axu3")

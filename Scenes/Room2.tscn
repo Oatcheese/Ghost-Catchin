@@ -5,15 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://c2rdp2f11y6nn" path="res://Sprites/roof-wall.png" id="1_u5puh"]
 [ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/wall-tile.png" id="2_7v5bi"]
 [ext_resource type="Texture2D" uid="uid://cvof7h028dbbf" path="res://Sprites/side-wall.png" id="2_bbr00"]
-[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Door.gd" id="3_erksf"]
 [ext_resource type="Texture2D" uid="uid://7xetxva3sf2t" path="res://Sprites/corner-wall.png" id="3_mdbp1"]
-[ext_resource type="Texture2D" uid="uid://dr08l7qbbr0bb" path="res://Sprites/top-door.png" id="4_we5c8"]
 [ext_resource type="Texture2D" uid="uid://jcwl1m1xfakj" path="res://Sprites/roof-cornel-wall.png" id="5_gv0tw"]
-[ext_resource type="Texture2D" uid="uid://k1eojefnye1g" path="res://Sprites/left-door.png" id="6_8ll4g"]
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="7_bbr00"]
-[ext_resource type="Texture2D" uid="uid://dwb1vnmrpbu5e" path="res://Sprites/left-door-open.png" id="7_mdbp1"]
-[ext_resource type="Texture2D" uid="uid://b1vqskltuvyia" path="res://Sprites/top-door-open.png" id="11_iqqoj"]
-[ext_resource type="Texture2D" uid="uid://bywhhn18kyqai" path="res://Sprites/top-door-mask.png" id="13_rsckw"]
+[ext_resource type="PackedScene" uid="uid://c2ahyviycpspv" path="res://Scenes/Doors/TopDoor.tscn" id="8_iqqoj"]
+[ext_resource type="PackedScene" uid="uid://42eq78vsn5i8" path="res://Scenes/Doors/LeftDoor.tscn" id="8_rsckw"]
 [ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="14_vpp8u"]
 [ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/GhostChaser.tscn" id="16_ph5a1"]
 
@@ -111,74 +107,11 @@ size = Vector2(160, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_we5c8"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a35do"]
-size = Vector2(14, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_8ll4g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_mdbp1")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr33r"]
-size = Vector2(64, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vgdee"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_we5c8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_iqqoj")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtn4k"]
-texture = ExtResource("13_rsckw")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt4vs"]
-texture = ExtResource("1_u5puh")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dkvp"]
-texture = ExtResource("2_7v5bi")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_vgdee"]
-sources/0 = SubResource("TileSetAtlasSource_jtn4k")
-sources/1 = SubResource("TileSetAtlasSource_dt4vs")
-sources/2 = SubResource("TileSetAtlasSource_5dkvp")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lun8n"]
-size = Vector2(31.5, 32)
-
 [node name="Room2" type="Node2D" unique_id=329816156]
 position = Vector2(0, 24)
 scale = Vector2(2, 2)
 
-[node name="LeftDoorMark" type="Marker2D" parent="." unique_id=1924532586]
+[node name="LeftDoorSpawn" type="Marker2D" parent="." unique_id=1924532586]
 position = Vector2(16, 172)
 
 [node name="TopDoorMark" type="Marker2D" parent="." unique_id=1068743458]
@@ -193,6 +126,10 @@ tile_set = SubResource("TileSet_a35do")
 position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAABAAAAIAAQAAAAAAABAAAAMAAQAAAAAAABAAAAQAAQAAAAAAABAAAAUABgAAAAAAAAAAAAYAAQAAAAAAABAAAAcAAQAAAAAAABAAAAgAAQAAAAAAABAAAAkAAQAAAAAAABABAAoAAQAAAAAAAFACAAoAAQAAAAAAAFADAAoAAQAAAAAAAFAEAAoAAQAAAAAAAFAFAAoAAQAAAAAAAFAGAAoAAQAAAAAAAFAHAAoAAQAAAAAAAFAIAAoAAQAAAAAAAFAJAAoAAQAAAAAAAFAKAAoAAQAAAAAAAFALAAoAAQAAAAAAAFAMAAoAAQAAAAAAAFANAAoAAQAAAAAAAFAOAAoAAQAAAAAAAFAPAAoAAQAAAAAAAFAQAAoAAQAAAAAAAFARAAoAAQAAAAAAAFASAAoAAQAAAAAAAFATAAkAAQAAAAAAAAATAAgAAQAAAAAAAAATAAcAAQAAAAAAAAATAAYAAQAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAABAAkABgAAAAAAAAACAAkABgAAAAAAAAADAAkABgAAAAAAAAAEAAkABgAAAAAAAAAFAAkABgAAAAAAAAAGAAkABgAAAAAAAAAHAAkABgAAAAAAAAAIAAkABgAAAAAAAAAJAAkABgAAAAAAAAAKAAkABgAAAAAAAAALAAkABgAAAAAAAAAMAAkABgAAAAAAAAANAAkABgAAAAAAAAAOAAkABgAAAAAAAAAPAAkABgAAAAAAAAAQAAkABgAAAAAAAAARAAkABgAAAAAAAAASAAkABgAAAAAAAAASAAgABgAAAAAAAAARAAgABgAAAAAAAAAQAAgABgAAAAAAAAAPAAgABwAAAAAAAAAOAAgABwAAAAAAAAANAAgABwAAAAAAAAAMAAgABwAAAAAAAAALAAgABwAAAAAAAAAKAAgABgAAAAAAAAAJAAgABgAAAAAAAAAIAAgABgAAAAAAAAAHAAgABgAAAAAAAAAGAAgABgAAAAAAAAAFAAgABgAAAAAAAAAEAAgABgAAAAAAAAADAAgABgAAAAAAAAACAAgABgAAAAAAAAABAAgABgAAAAAAAAABAAcABgAAAAAAAAACAAcABgAAAAAAAAADAAcABgAAAAAAAAAEAAcABgAAAAAAAAAFAAcABgAAAAAAAAAGAAcABgAAAAAAAAAHAAcABwAAAAAAAAAIAAcABwAAAAAAAAAJAAcABwAAAAAAAAAKAAcABwAAAAAAAAALAAcABwAAAAAAAAAMAAcABwAAAAAAAAANAAcABwAAAAAAAAAOAAcABwAAAAAAAAAPAAcABwAAAAAAAAAQAAcABgAAAAAAAAARAAcABgAAAAAAAAASAAcABgAAAAAAAAASAAYABgAAAAAAAAASAAUABgAAAAAAAAASAAQABgAAAAAAAAASAAMABgAAAAAAAAASAAIABgAAAAAAAAASAAEABwAAAAAAAAARAAEABwAAAAAAAAAQAAEABwAAAAAAAAAPAAEABwAAAAAAAAAOAAEABwAAAAAAAAANAAEABwAAAAAAAAAMAAEABwAAAAAAAAALAAEABwAAAAAAAAAKAAEABgAAAAAAAAAJAAEABwAAAAAAAAAIAAEABwAAAAAAAAAHAAEABwAAAAAAAAAGAAEABwAAAAAAAAAFAAEABwAAAAAAAAAEAAEABwAAAAAAAAADAAEABwAAAAAAAAACAAEABwAAAAAAAAABAAEABwAAAAAAAAABAAIABgAAAAAAAAABAAMABgAAAAAAAAABAAQABgAAAAAAAAABAAUABgAAAAAAAAABAAYABgAAAAAAAAACAAYABgAAAAAAAAADAAYABgAAAAAAAAAEAAYABgAAAAAAAAAFAAYABgAAAAAAAAAGAAYABgAAAAAAAAAHAAYABwAAAAAAAAAIAAYABgAAAAAAAAAJAAYABwAAAAAAAAAKAAYABgAAAAAAAAALAAYABgAAAAAAAAAMAAYABgAAAAAAAAANAAYABwAAAAAAAAAOAAYABgAAAAAAAAAPAAYABwAAAAAAAAAQAAYABgAAAAAAAAAQAAUABgAAAAAAAAARAAUABgAAAAAAAAARAAQABgAAAAAAAAARAAMABgAAAAAAAAAQAAMABgAAAAAAAAAPAAMABgAAAAAAAAAOAAMABgAAAAAAAAANAAMABgAAAAAAAAAMAAMABgAAAAAAAAALAAMABgAAAAAAAAAKAAMABgAAAAAAAAAJAAMABgAAAAAAAAAIAAMABwAAAAAAAAAHAAMABwAAAAAAAAAGAAMABwAAAAAAAAAFAAMABwAAAAAAAAAEAAMABwAAAAAAAAAEAAIABgAAAAAAAAADAAIABgAAAAAAAAACAAIABgAAAAAAAAACAAMABgAAAAAAAAADAAMABwAAAAAAAAAFAAQABgAAAAAAAAAEAAQABgAAAAAAAAADAAQABgAAAAAAAAACAAQABgAAAAAAAAACAAUABgAAAAAAAAADAAUABgAAAAAAAAAEAAUABgAAAAAAAAAFAAUABgAAAAAAAAAGAAUABgAAAAAAAAAHAAUABgAAAAAAAAAIAAUABwAAAAAAAAAJAAUABwAAAAAAAAAKAAUABwAAAAAAAAALAAUABwAAAAAAAAAMAAUABwAAAAAAAAANAAUABwAAAAAAAAAOAAUABwAAAAAAAAAPAAUABgAAAAAAAAARAAYABgAAAAAAAAARAAIABgAAAAAAAAAQAAIABgAAAAAAAAAPAAIABgAAAAAAAAAOAAQABgAAAAAAAAAPAAQABgAAAAAAAAAQAAQABgAAAAAAAAANAAQABgAAAAAAAAAMAAQABgAAAAAAAAALAAQABgAAAAAAAAAKAAQABgAAAAAAAAAJAAQABgAAAAAAAAAIAAQABwAAAAAAAAAHAAQABgAAAAAAAAAGAAQABgAAAAAAAAAFAAIABgAAAAAAAAAGAAIABgAAAAAAAAAHAAIABgAAAAAAAAAIAAIABgAAAAAAAAAJAAIABgAAAAAAAAAKAAIABgAAAAAAAAALAAIABgAAAAAAAAAMAAIABgAAAAAAAAANAAIABgAAAAAAAAAOAAIABgAAAAAAAAATAAUAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAABQAAAAAAABATAAAABQAAAAAAAAAAAAoAAgAAAAAAAGATAAoAAgAAAAAAADA=")
 tile_set = SubResource("TileSet_7bevr")
+
+[node name="TopDoor" parent="." unique_id=993216977 instance=ExtResource("8_iqqoj")]
+position = Vector2(336, 43.5)
+spawn_marker_name = "BottomDoorMark"
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=822178724]
 position = Vector2(0, -4)
@@ -260,60 +197,9 @@ shape = SubResource("RectangleShape2D_we5c8")
 position = Vector2(272, 144)
 shape = SubResource("RectangleShape2D_we5c8")
 
-[node name="LeftDoor" type="Area2D" parent="." unique_id=1758795203]
-position = Vector2(-79, 109)
-script = ExtResource("3_erksf")
-next_room_path = "res://Scenes/Room1.tscn"
-spawn_marker_name = "RightDoorMark"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor" unique_id=402300083]
-position = Vector2(72, 63)
-shape = SubResource("RectangleShape2D_a35do")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftDoor" unique_id=1022967943]
-position = Vector2(95, 63)
-sprite_frames = SubResource("SpriteFrames_a35do")
-frame_progress = 0.062084604
-
-[node name="InteractionArea" type="Area2D" parent="LeftDoor" unique_id=1357139343]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor/InteractionArea" unique_id=1376019689]
-position = Vector2(111, 63)
-shape = SubResource("RectangleShape2D_vr33r")
-
-[node name="TopDoor" type="Area2D" parent="." unique_id=1231703725]
-position = Vector2(399, -51)
-rotation = 1.5707964
-script = ExtResource("3_erksf")
-next_room_path = "res://Scenes/Room3.tscn"
-spawn_marker_name = "BottomDoorMark"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor" unique_id=449003386]
-position = Vector2(72, 63)
-shape = SubResource("RectangleShape2D_a35do")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TopDoor" unique_id=458283196]
-position = Vector2(95, 63)
-rotation = -1.5707964
-sprite_frames = SubResource("SpriteFrames_vgdee")
-frame_progress = 0.94922143
-
-[node name="TDoorMask" type="TileMapLayer" parent="TopDoor" unique_id=942856593]
-position = Vector2(79, 79)
-tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAGAAAP7/AAABAAAAAGABAP//AAAAAAEAAGABAP7/AAABAAEAAGAAAAEAAgAAAAAAAGAAAAAAAgABAAAAAGABAAEAAgAAAAEAAGABAAAAAgABAAEAAGAAAP3/AgAAAAAAAGAAAPz/AgABAAAAAGABAP3/AgAAAAEAAGABAPz/AgABAAEAAGD+/wEAAQAAAAAAAGD+/wAAAQABAAAAAGD//wEAAQAAAAEAAGD//wAAAQABAAEAAGD+////AQAAAAAAAGD+//7/AQABAAAAAGD/////AQAAAAEAAGD///7/AQABAAEAAGD+//3/AQAAAAAAAGD+//z/AQABAAAAAGD///3/AQAAAAEAAGD///z/AQABAAEAAGA=")
-tile_set = SubResource("TileSet_vgdee")
-
-[node name="InteractionArea" type="Area2D" parent="TopDoor" unique_id=855341216]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor/InteractionArea" unique_id=1507198000]
-position = Vector2(111, 63)
-shape = SubResource("RectangleShape2D_vr33r")
-
-[node name="TopDoorArea" type="Area2D" parent="TopDoor" unique_id=1888273850]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor/TopDoorArea" unique_id=1402528633]
-position = Vector2(94.75, 63)
-shape = SubResource("RectangleShape2D_lun8n")
+[node name="LeftDoor" parent="." unique_id=1131350925 instance=ExtResource("8_rsckw")]
+position = Vector2(16, 172)
+spawn_marker_name = "RDoorMark"
 
 [node name="Ghost" parent="." unique_id=2131525068 instance=ExtResource("7_bbr00")]
 position = Vector2(126, -58)

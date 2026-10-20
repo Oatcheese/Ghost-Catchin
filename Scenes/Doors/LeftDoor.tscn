@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://42eq78vsn5i8"]
+
+[ext_resource type="Script" uid="uid://u214hb2flxv8" path="res://Scripts/Doors/Door.gd" id="1_386r2"]
+[ext_resource type="Texture2D" uid="uid://k1eojefnye1g" path="res://Sprites/Doors/left-door.png" id="1_i0lk1"]
+[ext_resource type="Texture2D" uid="uid://dwb1vnmrpbu5e" path="res://Sprites/Doors/left-door-open.png" id="2_386r2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phbok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i0lk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_386r2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sonfd"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyqnl"]
+size = Vector2(14, 32)
+
+[node name="LeftDoor" type="Node2D" unique_id=1131350925]
+script = ExtResource("1_386r2")
+
+[node name="DoorSprite" type="AnimatedSprite2D" parent="." unique_id=77254432]
+sprite_frames = SubResource("SpriteFrames_phbok")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=854542511]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1944384938]
+shape = SubResource("RectangleShape2D_sonfd")
+
+[node name="TeleportArea" type="Area2D" parent="." unique_id=358268296]
+position = Vector2(-23, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportArea" unique_id=53677189]
+shape = SubResource("RectangleShape2D_nyqnl")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bywhhn18kyqai"
-path="res://.godot/imported/top-door-mask.png-5121f4b883ac7163058207cbb7674c1e.ctex"
+uid="uid://rnr4d2lbc04h"
+path="res://.godot/imported/bottom-door.png-e9cf9bfddcc7e60d875b908e236ebe5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/top-door-mask.png"
-dest_files=["res://.godot/imported/top-door-mask.png-5121f4b883ac7163058207cbb7674c1e.ctex"]
+source_file="res://Sprites/Doors/bottom-door.png"
+dest_files=["res://.godot/imported/bottom-door.png-e9cf9bfddcc7e60d875b908e236ebe5e.ctex"]
 
 [params]
 

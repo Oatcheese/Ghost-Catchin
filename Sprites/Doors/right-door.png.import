@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1vqskltuvyia"
-path="res://.godot/imported/top-door-open.png-e49222ae0932d23ce94834915cdf4333.ctex"
+uid="uid://cl71xh20anbx2"
+path="res://.godot/imported/right-door.png-364727c1e93e8d537359ec7cf9913234.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/top-door-open.png"
-dest_files=["res://.godot/imported/top-door-open.png-e49222ae0932d23ce94834915cdf4333.ctex"]
+source_file="res://Sprites/Doors/right-door.png"
+dest_files=["res://.godot/imported/right-door.png-364727c1e93e8d537359ec7cf9913234.ctex"]
 
 [params]
 
