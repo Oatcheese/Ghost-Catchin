@@ -161,4 +161,4 @@ shape = SubResource("RectangleShape2D_a35do")
 position = Vector2(95, 135)
 
 [node name="Candelabra2" parent="." unique_id=729790012 instance=ExtResource("12_54nc4")]
-position = Vector2(1180, 138)
+position = Vector2(579, 75.00001)
