@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jcwl1m1xfakj" path="res://Sprites/Materials/Walls/roof-corner-wall.png" id="5_gv0tw"]
 [ext_resource type="PackedScene" uid="uid://c2ahyviycpspv" path="res://Scenes/Doors/TopDoor.tscn" id="8_iqqoj"]
 [ext_resource type="PackedScene" uid="uid://42eq78vsn5i8" path="res://Scenes/Doors/LeftDoor.tscn" id="8_rsckw"]
+[ext_resource type="PackedScene" uid="uid://bm1ke4xr3j5vx" path="res://Scenes/Candelabra.tscn" id="11_k4lmf"]
 [ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="14_vpp8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpp8u"]
@@ -156,3 +157,6 @@ polygon = PackedVector2Array(225, 70, 65, 70, 65, 38, -63, 38, -63, -26, -31, -2
 
 [node name="Item" parent="." unique_id=872984647 instance=ExtResource("14_vpp8u")]
 position = Vector2(196, 152.5)
+
+[node name="Candelabra" parent="." unique_id=393140780 instance=ExtResource("11_k4lmf")]
+position = Vector2(578, 76)
