@@ -164,26 +164,25 @@ next_room_path = "uid://dpd6b4rc3pmy4"
 position = Vector2(1248, 376)
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1780022640]
-position = Vector2(0, -8)
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1221613898]
-position = Vector2(640, 677)
+position = Vector2(640, 669)
 shape = SubResource("RectangleShape2D_vgdee")
 
 [node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=686746546]
-position = Vector2(640, 155)
+position = Vector2(640, 147)
 shape = SubResource("RectangleShape2D_2cfok")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=251854752]
-position = Vector2(59, 416)
+position = Vector2(59, 408)
 shape = SubResource("RectangleShape2D_u6g2q")
 
 [node name="RightWallUpper" type="CollisionShape2D" parent="Walls" unique_id=24990765]
-position = Vector2(1221, 256)
+position = Vector2(1221, 248)
 shape = SubResource("RectangleShape2D_atjv8")
 
 [node name="RightWallLower" type="CollisionShape2D" parent="Walls" unique_id=1379176828]
-position = Vector2(1221, 544)
+position = Vector2(1221, 536)
 shape = SubResource("RectangleShape2D_d8x61")
 
 [node name="Table1" type="Sprite2D" parent="." unique_id=1692407260]
