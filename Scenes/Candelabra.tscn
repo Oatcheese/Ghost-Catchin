@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bm1ke4xr3j5vx"]
+
+[ext_resource type="Texture2D" uid="uid://dmlsvauhl86rl" path="res://Sprites/Candelabra/UntitledArtwork1 - 1.png" id="1_aldaw"]
+[ext_resource type="Script" uid="uid://3ulstxytcytt" path="res://Scripts/candelabra.gd" id="1_crwtu"]
+[ext_resource type="Texture2D" uid="uid://ci3qho3qo0igg" path="res://Sprites/Candelabra/UntitledArtwork1 - 2.png" id="2_crwtu"]
+[ext_resource type="Texture2D" uid="uid://bcs2xtyfpl2ni" path="res://Sprites/Candelabra/UntitledArtwork1 - 3.png" id="3_yh0oc"]
+[ext_resource type="Texture2D" uid="uid://douv7kvkvrljx" path="res://Sprites/Candelabra/UntitledArtwork1 - 4.png" id="4_ncjh4"]
+[ext_resource type="Texture2D" uid="uid://mepyi3m6qrlo" path="res://Sprites/Candelabra/candelabra-off.png" id="6_yh0oc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvbwk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aldaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_crwtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yh0oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ncjh4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yh0oc")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvbwk"]
+size = Vector2(16, 15)
+
+[node name="Candelabra" type="Node2D" unique_id=393140780]
+scale = Vector2(3, 3)
+script = ExtResource("1_crwtu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=445627870]
+sprite_frames = SubResource("SpriteFrames_dvbwk")
+animation = &"off"
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=201005339]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1054884803]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_dvbwk")

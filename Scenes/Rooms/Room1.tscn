@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cr26771hxute6" path="res://Sprites/Materials/floor-tile.png" id="6_olvpm"]
 [ext_resource type="Texture2D" uid="uid://bke1rl0k220nn" path="res://Sprites/Materials/Walls/wall-tile.png" id="7_xqepp"]
 [ext_resource type="PackedScene" uid="uid://s8n7odewuimf" path="res://Scenes/Doors/RightDoor.tscn" id="9_626qf"]
+[ext_resource type="PackedScene" uid="uid://bm1ke4xr3j5vx" path="res://Scenes/Candelabra.tscn" id="12_54nc4"]
 [ext_resource type="Texture2D" uid="uid://c7bcectfsove4" path="res://Sprites/Decorations/table1.png" id="13_huy5m"]
 [ext_resource type="Texture2D" uid="uid://bjdv3ns4ltve8" path="res://Sprites/Items/Book/book-open.png" id="22_r3rln"]
 
@@ -155,3 +156,9 @@ texture = ExtResource("22_r3rln")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table" unique_id=1722881626]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_a35do")
+
+[node name="Candelabra" parent="." unique_id=393140780 instance=ExtResource("12_54nc4")]
+position = Vector2(95, 135)
+
+[node name="Candelabra2" parent="." unique_id=729790012 instance=ExtResource("12_54nc4")]
+position = Vector2(1180, 138)
