@@ -109,6 +109,14 @@ next_room_path = "uid://dcm28t3s82xlm"
 [node name="TopDoorSpawn" type="Marker2D" parent="." unique_id=1068743458]
 position = Vector2(336, 60)
 
+[node name="LeftDoor" parent="." unique_id=1131350925 instance=ExtResource("8_rsckw")]
+position = Vector2(16, 188)
+spawn_marker_name = "RightDoorSpawn"
+next_room_path = "uid://ddjqdasxdrfrg"
+
+[node name="LeftDoorSpawn" type="Marker2D" parent="." unique_id=1924532586]
+position = Vector2(16, 188)
+
 [node name="Walls" type="StaticBody2D" parent="." unique_id=596378242]
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1128648076]
@@ -145,14 +153,6 @@ polygon = PackedVector2Array(0, -32, 0, 0, 160, 0, 160, 64, 384, 64, 384, 32, 19
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles" unique_id=234984529]
 position = Vector2(287, 234)
 polygon = PackedVector2Array(225, 70, 65, 70, 65, 38, -63, 38, -63, -26, -31, -26, -31, 6, 1, 6, 1, -26, 33, -26, 33, 6, 129, 6, 129, -26, 161, -26, 161, 6, 193, 6, 193, -26, 225, -26)
-
-[node name="LeftDoor" parent="." unique_id=1131350925 instance=ExtResource("8_rsckw")]
-position = Vector2(16, 188)
-spawn_marker_name = "RightDoorSpawn"
-next_room_path = "uid://ddjqdasxdrfrg"
-
-[node name="LeftDoorSpawn" type="Marker2D" parent="." unique_id=1924532586]
-position = Vector2(16, 188)
 
 [node name="Item" parent="." unique_id=872984647 instance=ExtResource("14_vpp8u")]
 position = Vector2(196, 152.5)
