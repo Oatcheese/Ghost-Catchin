@@ -8,6 +8,7 @@ var ghosts_captured := 0
 var player_health := 3
 var max_health := 3
 var current_room_name := ""
+var candelabras: Dictionary[String, Dictionary] = {}
 
 func capture_ghost(amount: int = 1) -> void:
 	ghosts_captured += amount

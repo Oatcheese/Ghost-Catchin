@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Enemies/Ghost.tscn" id="7_bbr00"]
 [ext_resource type="PackedScene" uid="uid://c2ahyviycpspv" path="res://Scenes/Doors/TopDoor.tscn" id="8_iqqoj"]
 [ext_resource type="PackedScene" uid="uid://42eq78vsn5i8" path="res://Scenes/Doors/LeftDoor.tscn" id="8_rsckw"]
+[ext_resource type="PackedScene" uid="uid://bm1ke4xr3j5vx" path="res://Scenes/Candelabra.tscn" id="13_jikuh"]
 [ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="14_vpp8u"]
 [ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/Enemies/GhostChaser.tscn" id="16_ph5a1"]
 
@@ -211,3 +212,6 @@ position = Vector2(196, 152.5)
 
 [node name="Ghost2" parent="." unique_id=1439663349 instance=ExtResource("16_ph5a1")]
 position = Vector2(554.5, 129.5)
+
+[node name="Candelabra" parent="." unique_id=393140780 instance=ExtResource("13_jikuh")]
+position = Vector2(76.5, 64.5)
