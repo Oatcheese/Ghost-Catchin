@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bennoey6ob8ir"]
 
-[ext_resource type="Texture2D" uid="uid://dhwmbi4e30j2" path="res://Sprites/End Game/EVILGameOver.png" id="1_k52d1"]
-[ext_resource type="Texture2D" uid="uid://bu37e41wtiyqr" path="res://Sprites/background.png" id="2_ktc4i"]
-[ext_resource type="AudioStream" uid="uid://blv8b8dno42l3" path="res://Sprites/Halflife2 stalker scream sound effect.mp3" id="3_ktc4i"]
+[ext_resource type="Texture2D" uid="uid://dhwmbi4e30j2" path="res://Sprites/GameOver/EVILGameOver.png" id="1_k52d1"]
+[ext_resource type="Texture2D" uid="uid://bu37e41wtiyqr" path="res://Sprites/Materials/background.png" id="2_ktc4i"]
+[ext_resource type="AudioStream" uid="uid://blv8b8dno42l3" path="res://Sprites/Sounds/Halflife2 stalker scream sound effect.mp3" id="3_ktc4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktc4i"]
 texture = ExtResource("1_k52d1")

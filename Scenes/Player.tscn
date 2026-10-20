@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://jka2s6ly0sly"]
 
-[ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/PlayerController.gd" id="1_dewec"]
-[ext_resource type="Script" uid="uid://jmm6wh3x7hlm" path="res://Scripts/VacuumSkillCheckBar.gd" id="4_5ixxa"]
-[ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scripts/Vacuum.gd" id="4_nn08x"]
-[ext_resource type="Texture2D" uid="uid://cn4swb7ic4h3e" path="res://Sprites/tornadoi.png" id="5_nn08x"]
-[ext_resource type="Texture2D" uid="uid://dbd6pn17v85qs" path="res://Sprites/player/UntitledArtwork1 - 1.png" id="6_52ee3"]
-[ext_resource type="Texture2D" uid="uid://b8v0pei01614l" path="res://Sprites/vacuum.png" id="7_52ee3"]
-[ext_resource type="Texture2D" uid="uid://0nyq58qn40om" path="res://Sprites/player/UntitledArtwork1 - 2.png" id="7_bhhdu"]
+[ext_resource type="Script" uid="uid://cl24jyqwupuob" path="res://Scripts/Player/PlayerController.gd" id="1_dewec"]
+[ext_resource type="Script" uid="uid://jmm6wh3x7hlm" path="res://Scripts/Vacuum/VacuumSkillCheckBar.gd" id="4_5ixxa"]
+[ext_resource type="Script" uid="uid://cvt1e6g7l6yhh" path="res://Scripts/Vacuum/Vacuum.gd" id="4_nn08x"]
+[ext_resource type="Texture2D" uid="uid://cn4swb7ic4h3e" path="res://Sprites/Vacuum/tornado.png" id="5_nn08x"]
+[ext_resource type="Texture2D" uid="uid://dbd6pn17v85qs" path="res://Sprites/Player/UntitledArtwork1 - 1.png" id="6_52ee3"]
+[ext_resource type="Texture2D" uid="uid://b8v0pei01614l" path="res://Sprites/Vacuum/vacuum.png" id="7_52ee3"]
+[ext_resource type="Texture2D" uid="uid://0nyq58qn40om" path="res://Sprites/Player/UntitledArtwork1 - 2.png" id="7_bhhdu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
 animations = [{

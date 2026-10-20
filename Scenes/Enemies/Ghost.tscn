@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cmjfrly4grsig"]
+
+[ext_resource type="Script" uid="uid://vh00pda4gbsm" path="res://Scripts/Enemies/Ghost.gd" id="1_lbxpe"]
+[ext_resource type="Texture2D" uid="uid://crgoc2e7inb6r" path="res://Sprites/Ghost/UntitledArtwork1 - 1.png" id="2_uf5dq"]
+[ext_resource type="Texture2D" uid="uid://c6asjqjbodkfk" path="res://Sprites/Ghost/UntitledArtwork1 - 2.png" id="3_mrk51"]
+[ext_resource type="Texture2D" uid="uid://bpm1br5ykvhjk" path="res://Sprites/Ghost/UntitledArtwork1 - 3.png" id="4_lbxpe"]
+[ext_resource type="Texture2D" uid="uid://clhp5bs0klbdd" path="res://Sprites/Ghost/UntitledArtwork1 - 4.png" id="5_sjca6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b44r2"]
+radius = 258.00464
+height = 516.0093
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a35do"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uf5dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mrk51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lbxpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sjca6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a35do"]
+size = Vector2(48, 54)
+
+[node name="Ghost" type="Node2D" unique_id=2131525068]
+
+[node name="Ghost" type="RigidBody2D" parent="." unique_id=1043465661 groups=["Ghosts"]]
+position = Vector2(1.4210855e-14, 2.842171e-14)
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_lbxpe")
+
+[node name="Area2D" type="Area2D" parent="Ghost" unique_id=1746415917 groups=["Ghosts"]]
+position = Vector2(2.3841858e-07, -2.8421713e-14)
+
+[node name="GhostNoZone" type="CollisionShape2D" parent="Ghost/Area2D" unique_id=789397389 groups=["Ghosts"]]
+position = Vector2(-2.3841858e-07, -2.842171e-14)
+scale = Vector2(0.3867308, 0.3867308)
+shape = SubResource("CapsuleShape2D_b44r2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ghost" unique_id=1405460677]
+position = Vector2(-1.4210855e-14, -2.842171e-14)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_a35do")
+frame_progress = 0.8923654
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost" unique_id=522754909]
+position = Vector2(-1.4210855e-14, -1)
+shape = SubResource("RectangleShape2D_a35do")
+
+[connection signal="area_exited" from="Ghost/Area2D" to="Ghost" method="_on_area_2d_area_exited"]
