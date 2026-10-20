@@ -8,7 +8,7 @@ func _ready() -> void:
 	GameManager.room_change_requested.connect(_change_room, CONNECT_DEFERRED)
 	
 	# Load the starting room
-	var start_room = load("res://Scenes/Room1.tscn")
+	var start_room = load("res://Scenes/Rooms/Room1.tscn")
 	_change_room(start_room, "SpawnPoint")
 
 func _change_room(next_scene: PackedScene, spawn_marker: String) -> void:

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://1hwoe8hwx37e" path="res://Sprites/lava-corner.png" id="9_avl2w"]
 [ext_resource type="Texture2D" uid="uid://bma3re7yqfxuy" path="res://Sprites/lava-wall.png" id="10_1le2d"]
 [ext_resource type="PackedScene" uid="uid://dqsrasa51h5fq" path="res://Scenes/Doors/BottomDoor.tscn" id="12_qrwqm"]
-[ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/GhostChaser.tscn" id="14_avl2w"]
+[ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/Enemies/GhostChaser.tscn" id="14_avl2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bur1i"]
 texture = ExtResource("1_retx1")

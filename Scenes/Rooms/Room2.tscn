@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cvof7h028dbbf" path="res://Sprites/side-wall.png" id="2_bbr00"]
 [ext_resource type="Texture2D" uid="uid://7xetxva3sf2t" path="res://Sprites/corner-wall.png" id="3_mdbp1"]
 [ext_resource type="Texture2D" uid="uid://jcwl1m1xfakj" path="res://Sprites/roof-cornel-wall.png" id="5_gv0tw"]
-[ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Ghost.tscn" id="7_bbr00"]
+[ext_resource type="PackedScene" uid="uid://cmjfrly4grsig" path="res://Scenes/Enemies/Ghost.tscn" id="7_bbr00"]
 [ext_resource type="PackedScene" uid="uid://c2ahyviycpspv" path="res://Scenes/Doors/TopDoor.tscn" id="8_iqqoj"]
 [ext_resource type="PackedScene" uid="uid://42eq78vsn5i8" path="res://Scenes/Doors/LeftDoor.tscn" id="8_rsckw"]
 [ext_resource type="PackedScene" uid="uid://dqrsyad80mqdn" path="res://Scenes/Item.tscn" id="14_vpp8u"]
-[ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/GhostChaser.tscn" id="16_ph5a1"]
+[ext_resource type="PackedScene" uid="uid://b6ap2u5yygmll" path="res://Scenes/Enemies/GhostChaser.tscn" id="16_ph5a1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpp8u"]
 texture = ExtResource("1_rx63n")
